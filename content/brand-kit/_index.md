@@ -27,6 +27,29 @@ FBL uses a disciplined, single-color identity. **Midnight Navy is the only offic
 
 The blue seal is used on white backgrounds only. On any non-white background, use the white logo.
 
+### Brand Colors
+
+<div class="color-swatches">
+  <div class="color-swatch">
+    <div class="swatch" style="background: #0F111E;"></div>
+    <div class="color-info">
+      <h4>Midnight Navy</h4>
+      <p><strong>HEX:</strong> #0F111E</p>
+      <p><strong>RGB:</strong> 15, 17, 30</p>
+      <p><strong>CMYK:</strong> 100, 94, 58, 73</p>
+    </div>
+  </div>
+  <div class="color-swatch">
+    <div class="swatch" style="background: #FFFFFF; border: 1px solid #e5e7eb;"></div>
+    <div class="color-info">
+      <h4>White</h4>
+      <p><strong>HEX:</strong> #FFFFFF</p>
+      <p><strong>RGB:</strong> 255, 255, 255</p>
+      <p><strong>CMYK:</strong> 0, 0, 0, 0</p>
+    </div>
+  </div>
+</div>
+
 ### Background Rules
 
 **Approved:**
