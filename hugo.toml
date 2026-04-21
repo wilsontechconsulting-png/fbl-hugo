@@ -1,0 +1,25 @@
+baseURL = 'https://fbl.example.com/'
+languageCode = 'en-us'
+title = 'Fellowship of Business Leaders'
+theme = 'fbl'
+
+[params]
+  description = 'A faith-driven network of high-caliber business owners, operators, and executives building with conviction and accountability.'
+
+[menu]
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 1
+  [[menu.main]]
+    name = 'Membership'
+    url = '/membership/'
+    weight = 2
+  [[menu.main]]
+    name = 'Chapters'
+    url = '/chapters/'
+    weight = 3
+  [[menu.main]]
+    name = 'Apply'
+    url = '/apply/'
+    weight = 4

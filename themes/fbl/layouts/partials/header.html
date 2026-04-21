@@ -1,0 +1,21 @@
+<header class="site-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="/">
+                    <span class="logo-badge">FBL</span>
+                    <span class="logo-text">Fellowship</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                {{ range .Site.Menus.main }}
+                    {{ if eq .Name "Apply" }}
+                        <a href="{{ .URL }}" class="nav-link nav-cta">{{ .Name }}</a>
+                    {{ else }}
+                        <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+                    {{ end }}
+                {{ end }}
+            </nav>
+        </div>
+    </div>
+</header>
