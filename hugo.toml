@@ -6,6 +6,11 @@ theme = 'fbl'
 [params]
   description = 'A faith-driven network of high-caliber business owners, operators, and executives building with conviction and accountability.'
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [menu]
   [[menu.main]]
     name = 'About'
