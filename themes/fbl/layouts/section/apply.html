@@ -1,0 +1,326 @@
+{{ define "main" }}
+<article class="apply-page">
+    <section class="page-hero">
+        <div class="container">
+            <h1>{{ .Title }}</h1>
+            <p class="page-subtitle">Complete the covenant acknowledgment and membership application below.</p>
+        </div>
+    </section>
+
+    <section class="apply-content">
+        <div class="container">
+            <form name="fbl-application" method="POST" action="/membership-payment/" netlify netlify-honeypot="bot-field" class="application-form">
+                <input type="hidden" name="form-name" value="fbl-application" />
+                <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+                <!-- FBL Covenant -->
+                <div class="form-section">
+                    <h2>FBL Covenant</h2>
+                    <p class="section-intro">This is the short-form covenant for application and onboarding. It keeps the important part front and center without turning the process into a mile-long form.</p>
+                    
+                    <div class="covenant-block">
+                        <h3>What FBL commits to</h3>
+                        <p>FBL exists to develop leaders of conviction who pursue wholeness in faith, work, and life. Facilitators commit to intentional leadership formation, honest feedback, meaningful relationships, spiritual and strategic support, and a standard that calls members upward.</p>
+                    </div>
+
+                    <div class="covenant-block">
+                        <h3>What members commit to</h3>
+                        <p>Members commit to integrity, confidentiality, consistency, contribution, accountability, direct communication, and full engagement. FBL is not passive, and it is not a casual networking club. It is a covenant-driven leadership brotherhood.</p>
+                    </div>
+
+                    <div class="covenant-acknowledgment">
+                        <h4>Covenant Acknowledgment (All Required)</h4>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="covenant_formation" required />
+                            <span>I understand FBL is about formation, not just information.</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="covenant_confidentiality" required />
+                            <span>I agree to confidentiality and to handle concerns directly and maturely.</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="covenant_integrity" required />
+                            <span>I agree to pursue integrity, accountability, and honest self-leadership.</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="covenant_contribution" required />
+                            <span>I understand FBL expects contribution, not passive consumption.</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="covenant_agreement" required />
+                            <span>I have read and willingly agree to the FBL covenant standard as part of my application for membership.</span>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="covenant_signature">Covenant Signature (Type Full Name) *</label>
+                            <input type="text" id="covenant_signature" name="covenant_signature" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="covenant_date">Covenant Date *</label>
+                            <input type="date" id="covenant_date" name="covenant_date" required />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membership Application -->
+                <div class="form-section">
+                    <h2>Membership Application</h2>
+                    <p class="section-intro">Complete the application below. This version is trimmed down just enough to reduce friction without losing the important information.</p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="full_name">Full Legal Name *</label>
+                            <input type="text" id="full_name" name="full_name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="preferred_name">Preferred Name</label>
+                            <input type="text" id="preferred_name" name="preferred_name" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Mobile Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <input type="text" id="state" name="state" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn Profile URL</label>
+                        <input type="url" id="linkedin" name="linkedin" />
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" name="company" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Company Website</label>
+                            <input type="url" id="website" name="website" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="industry">Industry *</label>
+                            <input type="text" id="industry" name="industry" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Current Role *</label>
+                            <input type="text" id="role" name="role" required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="years_in_business">Years in Business *</label>
+                            <input type="number" id="years_in_business" name="years_in_business" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="employees">Number of Employees *</label>
+                            <input type="number" id="employees" name="employees" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="revenue">Annual Revenue Range *</label>
+                        <select id="revenue" name="revenue" required>
+                            <option value="">Select range...</option>
+                            <option value="Under $500K">Under $500K</option>
+                            <option value="$500K - $1M">$500K - $1M</option>
+                            <option value="$1M - $5M">$1M - $5M</option>
+                            <option value="$5M - $10M">$5M - $10M</option>
+                            <option value="$10M - $25M">$10M - $25M</option>
+                            <option value="$25M+">$25M+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="people_depending">People depending on you daily? *</label>
+                        <textarea id="people_depending" name="people_depending" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leadership_responsibility">Primary leadership responsibility *</label>
+                        <textarea id="leadership_responsibility" name="leadership_responsibility" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leadership_challenge">Biggest current leadership challenge *</label>
+                        <textarea id="leadership_challenge" name="leadership_challenge" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="spiritual_rhythm">Current spiritual rhythm *</label>
+                        <textarea id="spiritual_rhythm" name="spiritual_rhythm" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="church_connected">Connected to a local church? *</label>
+                        <select id="church_connected" name="church_connected" required>
+                            <option value="">Select...</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="Looking">Looking</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accountability">Do you have accountability? *</label>
+                        <select id="accountability" name="accountability" required>
+                            <option value="">Select...</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="Want to build it">Want to build it</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Areas Needing Strengthening (Select all that apply) *</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="strengthen_faith" value="Faith" />
+                                <span>Faith</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="strengthen_marriage" value="Marriage / Family" />
+                                <span>Marriage / Family</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="strengthen_leadership" value="Leadership Development" />
+                                <span>Leadership Development</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="strengthen_growth" value="Business Growth" />
+                                <span>Business Growth</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="strengthen_integrity" value="Integrity / Accountability" />
+                                <span>Integrity / Accountability</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="strengthen_health" value="Health" />
+                                <span>Health</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="strengthen_resilience" value="Emotional Resilience" />
+                                <span>Emotional Resilience</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="strengthen_other" value="Other" />
+                                <span>Other</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="why_join">Why do you want to join FBL? *</label>
+                        <textarea id="why_join" name="why_join" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hope_to_gain">What are you hoping to gain from FBL? *</label>
+                        <textarea id="hope_to_gain" name="hope_to_gain" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="willing_to_contribute">What are you willing to contribute to members? *</label>
+                        <textarea id="willing_to_contribute" name="willing_to_contribute" rows="4" required></textarea>
+                        <small>This is not a spectator network. Think in terms of experience, wisdom, relationships, operational help, accountability, prayer, insight, or opportunities.</small>
+                    </div>
+                </div>
+
+                <!-- Commitment Agreement -->
+                <div class="form-section">
+                    <h2>Commitment Agreement</h2>
+                    <div class="covenant-acknowledgment">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="commit_confidentiality" required />
+                            <span>I commit to confidentiality within FBL.</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="commit_consistency" required />
+                            <span>I commit to showing up consistently.</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="commit_growth" required />
+                            <span>I commit to personal growth and accountability.</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="commit_contribution" required />
+                            <span>I commit to contributing to other leaders.</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="commit_brotherhood" required />
+                            <span>I understand FBL is a leadership brotherhood, not a networking group.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Payment Selection -->
+                <div class="form-section">
+                    <h2>Membership Payment Selection</h2>
+                    <p class="section-intro">Acknowledge the one-time assessment fee, then choose either monthly billing or a prepaid option.</p>
+
+                    <div class="payment-acknowledgment">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="assessment_acknowledgment" required />
+                            <span>I acknowledge the required $195 one-time assessment fee for onboarding, leadership assessment tools, values and leadership-style review, alignment screening, and administrative setup.</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Payment Option *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="payment_option" value="Monthly" required />
+                                <span><strong>Monthly</strong> - $95/month recurring</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment_option" value="Prepay" required />
+                                <span><strong>Prepay</strong> - Contact for prepaid options</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="payment_notes">Payment Notes (Optional)</label>
+                        <textarea id="payment_notes" name="payment_notes" rows="2"></textarea>
+                    </div>
+
+                    <div class="payment-summary">
+                        <p><strong>Assessment Fee:</strong> $195 (one-time)</p>
+                        <p><strong>Monthly Membership:</strong> $95/month</p>
+                        <p><strong>Estimated Due Today:</strong> $195 (assessment fee paid first, then membership billing begins)</p>
+                    </div>
+                </div>
+
+                <!-- Final Affirmation -->
+                <div class="form-section">
+                    <p class="affirmation">By submitting this application, I affirm that I am pursuing leadership that integrates faith, work, and life, and I understand that membership requires integrity, accountability, and alignment with the FBL covenant.</p>
+                    
+                    <button type="submit" class="btn-submit">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</article>
+{{ end }}

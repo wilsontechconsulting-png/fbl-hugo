@@ -6,6 +6,10 @@
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
+    <loc>http://localhost:1313/membership-payment/</loc>
+  </url><url>
+    <loc>http://localhost:1313/apply/</loc>
+  </url><url>
     <loc>http://localhost:1313/brand-kit/</loc>
   </url><url>
     <loc>http://localhost:1313/chapters/</loc>

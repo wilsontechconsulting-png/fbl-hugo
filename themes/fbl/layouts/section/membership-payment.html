@@ -1,0 +1,42 @@
+{{ define "main" }}
+<article class="payment-page">
+    <section class="page-hero">
+        <div class="container">
+            <h1>{{ .Title }}</h1>
+            <p class="page-subtitle">Thank you for submitting your application! Complete your membership by processing payment below.</p>
+        </div>
+    </section>
+
+    <section class="payment-content">
+        <div class="container">
+            <div class="payment-steps">
+                <div class="payment-step">
+                    <div class="step-number">1</div>
+                    <h3>Assessment Fee</h3>
+                    <p>$195 one-time fee for onboarding, leadership assessment tools, values and leadership-style review, alignment screening, and administrative setup.</p>
+                    <a href="https://buy.stripe.com/28E9AU5G9ejK7vX97LgMw00" target="_blank" class="btn-payment">Pay Assessment Fee ($195)</a>
+                </div>
+
+                <div class="payment-step">
+                    <div class="step-number">2</div>
+                    <h3>Monthly Membership</h3>
+                    <p>$95/month recurring membership. Your first month begins after your assessment fee is processed and your application is approved.</p>
+                    <a href="https://buy.stripe.com/28E00k0lPgrS2bDes5gMw02" target="_blank" class="btn-payment">Set Up Monthly Membership ($95/month)</a>
+                </div>
+            </div>
+
+            <div class="payment-notes">
+                <h3>What Happens Next?</h3>
+                <ol>
+                    <li>Complete your assessment fee payment above</li>
+                    <li>Set up your monthly membership billing</li>
+                    <li>Our team will review your application</li>
+                    <li>You'll receive confirmation and next steps via email within 2-3 business days</li>
+                </ol>
+
+                <p class="contact-note">Questions? Contact us at <a href="mailto:member@fblconnect.com">member@fblconnect.com</a></p>
+            </div>
+        </div>
+    </section>
+</article>
+{{ end }}
