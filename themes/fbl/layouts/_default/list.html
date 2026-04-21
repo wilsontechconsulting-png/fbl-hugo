@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="content-page">
+    <section class="page-hero">
+        <div class="container">
+            <h1>{{ .Title }}</h1>
+            {{ if .Description }}
+            <p class="page-subtitle">{{ .Description }}</p>
+            {{ end }}
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <div class="content-wrapper">
+                {{ .Content }}
+            </div>
+        </div>
+    </section>
+</article>
+{{ end }}
