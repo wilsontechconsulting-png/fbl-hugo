@@ -556,11 +556,16 @@ body {
   text-align: center;
 }
 
-.download-cta .btn-primary {
+.download-cta .btn-primary,
+.download-cta .btn-primary:link,
+.download-cta .btn-primary:visited,
+.download-cta .btn-primary:hover,
+.download-cta .btn-primary:active,
+.download-cta .btn-primary:focus {
   display: inline-block;
   padding: 1rem 2.5rem;
   background: var(--fbl-green);
-  color: white;
+  color: white !important;
   font-size: 1.125rem;
   font-weight: 600;
   text-decoration: none;
