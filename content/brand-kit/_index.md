@@ -9,6 +9,10 @@ This guide protects FBL's identity as it scales. It is written for designers, ch
 
 **Asset Kit includes:** Primary Midnight Navy seal, White transparent seal, and print-safe one-color versions, plus approved typography references for web and print.
 
+<div class="download-cta">
+  <a href="https://drive.google.com/drive/folders/1Q34u70dQrnh4AZCf0-7IQlCtjx7U3fZf" target="_blank" class="btn-primary">Download Brand Assets</a>
+</div>
+
 ---
 
 ## Logo Files Provided (What to Use, When)
@@ -197,4 +201,10 @@ Chapters represent FBL. Chapters do not redefine it. Consistency is the scaling 
 
 ## Download Brand Assets
 
-For access to logo files, typography guides, and approved brand assets, contact FBL leadership at [member@fblconnect.com](mailto:member@fblconnect.com).
+All logo files (JPEG, PNG, PSD, SVG, WebP), typography references, and approved brand assets are available for download.
+
+<div class="download-cta">
+  <a href="https://drive.google.com/drive/folders/1Q34u70dQrnh4AZCf0-7IQlCtjx7U3fZf" target="_blank" class="btn-primary">Download Brand Assets</a>
+</div>
+
+For questions about brand usage, contact FBL leadership at [member@fblconnect.com](mailto:member@fblconnect.com).
