@@ -6,6 +6,8 @@
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
+    <loc>http://localhost:1313/brand-kit/</loc>
+  </url><url>
     <loc>http://localhost:1313/chapters/</loc>
   </url><url>
     <loc>http://localhost:1313/</loc>
