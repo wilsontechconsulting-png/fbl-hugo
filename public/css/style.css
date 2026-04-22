@@ -38,11 +38,12 @@ body {
 
 /* New Post Alert */
 .new-post-alert {
-  background: linear-gradient(135deg, var(--fbl-green) 0%, var(--secondary-green) 100%);
+  background: linear-gradient(135deg, var(--fbl-green) 0%, var(--green-dark) 100%);
   color: white;
   padding: 1rem 0;
   position: relative;
   overflow: hidden;
+  display: block;
 }
 
 .new-post-alert::before {
