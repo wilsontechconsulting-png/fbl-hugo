@@ -155,9 +155,34 @@ We will respond to your request within 30 days.
 
 ---
 
-## 8. Children's Privacy
+## 8. Youth and Young Leaders
 
-FBL is designed for business professionals and is not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected information from a child under 18, we will delete it promptly.
+FBL welcomes youth and young business-minded individuals under the age of 18 who demonstrate leadership potential and entrepreneurial spirit.
+
+### For Participants Under 18
+
+- **Parental consent required** — We require verifiable parental or guardian consent before collecting personal information from anyone under 18
+- **Limited data collection** — We collect only information necessary for program participation
+- **Parent/guardian access** — Parents or guardians may review, update, or request deletion of their child's information at any time
+
+### Youth Programs
+
+FBL may offer programs, mentorship opportunities, or resources specifically designed for young leaders. Participation in these programs may require:
+
+- Parental/guardian consent form
+- Emergency contact information
+- Age-appropriate participation agreements
+
+### Parent/Guardian Rights
+
+If your child is under 18 and participates in FBL programs, you have the right to:
+
+- Review what information we have collected from your child
+- Request correction or deletion of your child's information
+- Refuse to allow further collection or use of your child's information
+- Withdraw consent at any time
+
+To exercise these rights, contact us at [member@fblconnect.com](mailto:member@fblconnect.com) with "Youth Privacy" in the subject line.
 
 ---
 
