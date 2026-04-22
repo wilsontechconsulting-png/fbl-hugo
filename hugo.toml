@@ -34,17 +34,13 @@ buildExpired = false
     url = '/chapters/'
     weight = 3
   [[menu.main]]
-    name = 'Events'
-    url = '/events/'
-    weight = 4
-  [[menu.main]]
     name = 'Insights'
     url = '/blog/'
-    weight = 5
+    weight = 4
   [[menu.main]]
     name = 'Apply'
     url = '/apply/'
-    weight = 6
+    weight = 5
   [[menu.main]]
     name = 'Search'
     url = '/search/'
