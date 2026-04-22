@@ -122,6 +122,26 @@ body {
   padding: 8rem 0;
   text-align: center;
   position: relative;
+  background-image: url('/images/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(15, 17, 30, 0.92) 0%, rgba(15, 17, 30, 0.85) 100%);
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-badge {
@@ -129,10 +149,12 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: rgba(34, 197, 94, 0.1);
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.3);
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 500;
+  color: var(--fbl-green);
   margin-bottom: 2rem;
 }
 
@@ -141,6 +163,7 @@ body {
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 1.5rem;
+  color: white;
 }
 
 .text-accent {
@@ -149,7 +172,7 @@ body {
 
 .hero-subtitle {
   font-size: clamp(1.125rem, 2vw, 1.5rem);
-  color: rgba(15, 17, 30, 0.6);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 48rem;
   margin: 0 auto 3rem;
   line-height: 1.7;
