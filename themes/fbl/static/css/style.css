@@ -2501,8 +2501,8 @@ body {
   align-items: center;
   gap: 0.75rem;
   padding: 0.875rem 1.5rem;
-  background: var(--fbl-green);
-  color: white;
+  background: var(--fbl-green) !important;
+  color: white !important;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9375rem;
@@ -2512,7 +2512,8 @@ body {
 }
 
 .btn-document:hover {
-  background: var(--green-dark);
+  background: var(--green-dark) !important;
+  color: white !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
 }
@@ -2528,4 +2529,15 @@ body {
     font-size: 0.875rem;
     padding: 0.75rem 1.25rem;
   }
+}
+
+/* Force button text visibility */
+.document-download a.btn-document,
+a.btn-document {
+  color: white !important;
+}
+
+.document-download a.btn-document:hover,
+a.btn-document:hover {
+  color: white !important;
 }
