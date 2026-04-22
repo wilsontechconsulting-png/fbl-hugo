@@ -1,0 +1,39 @@
+# robots.txt for Fellowship of Business Leaders
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://fblconnect.com/sitemap.xml
+
+# AI Search Engines
+# OpenAI GPTBot
+User-agent: GPTBot
+Allow: /
+
+# Google Bard/Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# AI training data
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Bing AI
+User-agent: Bingbot
+Allow: /
+
+# llms.txt for AI agents
+# See: https://fblconnect.com/llms.txt

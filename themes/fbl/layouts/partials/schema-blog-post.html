@@ -1,0 +1,36 @@
+{{ if eq .Section "blog" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ .Title }}",
+  "description": "{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}",
+  "image": "{{ with .Params.image }}{{ $.Site.BaseURL | strings.TrimSuffix "/" }}{{ . }}{{ end }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ with .Params.author }}{{ . }}{{ else }}FBL Team{{ end }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fellowship of Business Leaders",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.BaseURL }}images/fbl-logo.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  {{ with .Params.categories }}
+  "articleSection": {{ index . 0 | jsonify }},
+  {{ end }}
+  {{ with .Params.tags }}
+  "keywords": {{ . | jsonify }},
+  {{ end }}
+  "inLanguage": "en-US"
+}
+</script>
+{{ end }}

@@ -3,12 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-    <meta name="description" content="{{ .Site.Params.description }}">
+    
+    <!-- Title -->
+    <title>{{ block "title" . }}{{ if .IsHome }}{{ .Site.Title }} - {{ .Site.Params.description }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}{{ end }}</title>
+    
+    <!-- Meta Description -->
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Params.summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+    
+    <!-- Keywords -->
+    {{ with .Params.tags }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ .Permalink }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Params.summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+    {{ with .Params.image }}<meta property="og:image" content="{{ $.Site.BaseURL | strings.TrimSuffix "/" }}{{ . }}">{{ end }}
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Params.summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+    {{ with .Params.image }}<meta name="twitter:image" content="{{ $.Site.BaseURL | strings.TrimSuffix "/" }}{{ . }}">{{ end }}
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ "images/fbl-logo.jpg" | relURL }}">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    {{ if .IsHome }}
+    {{ partial "schema-website.html" . }}
+    {{ end }}
+    {{ partial "schema-organization.html" . }}
+    {{ partial "schema-blog-post.html" . }}
 </head>
 <body>
     {{ partial "header.html" . }}
