@@ -97,6 +97,12 @@
   </url><url>
     <loc>http://localhost:1313/about/</loc>
   </url><url>
+    <loc>http://localhost:1313/chapter-leader-handbook/</loc>
+  </url><url>
+    <loc>http://localhost:1313/chapter-resources/</loc>
+  </url><url>
+    <loc>http://localhost:1313/chapter-standards/</loc>
+  </url><url>
     <loc>http://localhost:1313/membership-payment/</loc>
   </url><url>
     <loc>http://localhost:1313/apply/</loc>
@@ -108,5 +114,7 @@
     <loc>http://localhost:1313/membership/</loc>
   </url><url>
     <loc>http://localhost:1313/search/</loc>
+  </url><url>
+    <loc>http://localhost:1313/start-a-chapter/</loc>
   </url>
 </urlset>

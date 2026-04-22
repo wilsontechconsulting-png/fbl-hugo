@@ -141,8 +141,29 @@ If people already trust you, you can lead peers without needing control, and you
 
 ## Ready to Explore Starting a Chapter?
 
-Review the Chapter Start & Go Packet to understand the model, expectations, and next steps.
+We've created comprehensive resources to help you understand what it takes to launch and lead an FBL chapter with excellence.
 
-<div class="cta-center">
-  <a href="/apply/" class="btn-cta">Contact Us About Starting a Chapter</a>
+<div class="resource-grid">
+  <div class="resource-card">
+    <h3>📋 Start a Chapter</h3>
+    <p>Step-by-step process, requirements, and timeline for launching a chapter.</p>
+    <a href="/start-a-chapter/" class="btn-secondary">View Guide</a>
+  </div>
+  
+  <div class="resource-card">
+    <h3>📖 Leader Handbook</h3>
+    <p>Operational playbook with meeting formats and best practices.</p>
+    <a href="/chapter-leader-handbook/" class="btn-secondary">Read Handbook</a>
+  </div>
+  
+  <div class="resource-card">
+    <h3>🎯 Chapter Standards</h3>
+    <p>Membership criteria, expectations, and quality standards.</p>
+    <a href="/chapter-standards/" class="btn-secondary">View Standards</a>
+  </div>
+</div>
+
+<div class="cta-center" style="margin-top: 3rem;">
+  <a href="/chapter-resources/" class="btn-cta">View All Chapter Resources</a>
+  <a href="mailto:member@fblconnect.com?subject=Chapter%20Leader%20Application" class="btn-secondary">Contact Us About Starting a Chapter</a>
 </div>
