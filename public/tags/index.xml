@@ -92,5 +92,26 @@
       <guid>http://localhost:1313/tags/networking/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Collaboration</title>
+      <link>http://localhost:1313/tags/collaboration/</link>
+      <pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/collaboration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Diversity</title>
+      <link>http://localhost:1313/tags/diversity/</link>
+      <pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/diversity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Excellence</title>
+      <link>http://localhost:1313/tags/excellence/</link>
+      <pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/excellence/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
