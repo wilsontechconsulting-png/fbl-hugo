@@ -1,6 +1,6 @@
 ---
 title: "Stronger Together: Why Men and Women Both Belong at the Table"
-date: 2026-04-23
+date: 2026-04-22T11:00:00
 author: "FBL Team"
 categories: ["Leadership", "FBL Updates"]
 tags: ["diversity", "collaboration", "excellence"]
