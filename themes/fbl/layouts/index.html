@@ -105,7 +105,7 @@
         </div>
         
         <div class="blog-grid">
-            {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+            {{ range first 4 (where .Site.RegularPages "Section" "blog") }}
             <a href="{{ .Permalink }}" class="post-card-wrapper">
                 <article class="post-card">
                     {{ with .Params.image }}
