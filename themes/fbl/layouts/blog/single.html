@@ -1,5 +1,10 @@
 {{ define "main" }}
 <article class="blog-post">
+    {{ with .Params.image }}
+    <section class="post-hero-image">
+        <img src="{{ . }}" alt="{{ $.Title }}" />
+    </section>
+    {{ end }}
     <section class="post-hero">
         <div class="container">
             <div class="post-meta">

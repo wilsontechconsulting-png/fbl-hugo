@@ -107,14 +107,23 @@
         <div class="blog-grid">
             {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
             <article class="post-card">
-                <div class="post-card-meta">
-                    <time>{{ .Date.Format "January 2, 2006" }}</time>
+                {{ with .Params.image }}
+                <div class="post-card-image">
+                    <a href="{{ $.Permalink }}">
+                        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+                    </a>
                 </div>
-                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                {{ with .Params.summary }}
-                <p class="post-card-summary">{{ . }}</p>
                 {{ end }}
-                <a href="{{ .Permalink }}" class="post-card-link">Read Article →</a>
+                <div class="post-card-content">
+                    <div class="post-card-meta">
+                        <time>{{ .Date.Format "January 2, 2006" }}</time>
+                    </div>
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    {{ with .Params.summary }}
+                    <p class="post-card-summary">{{ . }}</p>
+                    {{ end }}
+                    <a href="{{ .Permalink }}" class="post-card-link">Read Article →</a>
+                </div>
             </article>
             {{ end }}
         </div>
