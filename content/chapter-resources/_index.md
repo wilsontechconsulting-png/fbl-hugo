@@ -29,12 +29,6 @@ Welcome to the FBL Chapter Resources hub. Whether you're exploring the idea of s
     <p>Membership criteria, expectations, and quality standards for FBL chapters.</p>
     <a href="/chapter-standards/" class="btn-secondary">View Standards</a>
   </div>
-
-  <div class="resource-card">
-    <h3>📄 Official Documents</h3>
-    <p>Downloadable policies, agreements, and forms required for chapter operation.</p>
-    <a href="/chapter-documents/" class="btn-secondary">View Documents</a>
-  </div>
   
   <div class="resource-card">
     <h3>💬 Support & Contact</h3>
