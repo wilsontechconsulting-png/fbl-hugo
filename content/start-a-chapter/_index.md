@@ -117,7 +117,7 @@ The process is designed to ensure alignment, quality, and sustainability. Here's
 2. **Develop Chapter Plan:**
    - Meeting location and format preferences
    - Initial member outreach strategy
-   - Chapter dues structure (aligned with FBL guidelines)
+   - Member dues structure (set locally, with 10% remitted to FBL national)
    - Timeline and milestones
 
 ### What FBL Does
@@ -153,7 +153,7 @@ The process is designed to ensure alignment, quality, and sustainability. Here's
 
 4. **Setup Operations:**
    - Create chapter communication channels (email, Circle community access)
-   - Establish dues collection process
+   - Establish dues collection process (including 10% remittance to FBL national)
    - Finalize meeting schedule and rhythm
 
 ### What FBL Does
@@ -256,18 +256,24 @@ To start and lead an FBL chapter, you must meet these baseline criteria:
 
 ## Financial Considerations
 
-### Costs to Launch a Chapter
-- **FBL Franchise Fee:** $0 (FBL is a nonprofit, not a franchise)
-- **Venue Rental:** $0-500/month (depending on location and setup)
-- **Materials & Supplies:** $100-300 initial setup
-- **Refreshments:** $50-150/meeting (optional, often covered by member dues)
+### Chapter Revenue Model
 
-### Revenue Model
-- **Member Dues:** Typically $100-200/month per member (set locally)
-- **Purpose:** Cover operational costs (venue, materials, refreshments)
-- **Chapter Leader Compensation:** Typically none (stewardship role, not business)
+FBL operates on a revenue-sharing model to support both local chapter operations and national infrastructure:
 
-**Note:** FBL is a 501(c)(3) nonprofit. Chapters operate under this framework, with dues covering operational expenses, not personal profit.
+- **Member Dues:** Set locally by chapter leader based on your market and operational costs
+- **FBL Share:** Chapter leaders remit 10% of total chapter revenue to FBL national
+- **Chapter Retention:** 90% of revenue stays with the chapter to cover operational expenses and leader compensation
+
+### Typical Chapter Expenses
+- **Venue:** Professional meeting space (costs vary by market)
+- **Materials:** Printed resources, name tags, supplies
+- **Refreshments:** Coffee, light refreshments (optional)
+- **Administrative:** Communication tools, member management
+
+### How It Works
+Chapter leaders set membership dues appropriate for their local market. From the total revenue collected, 10% is remitted to FBL national to support brand infrastructure, resources, and national leadership. The remaining 90% stays with the chapter for operational costs and leader compensation.
+
+**Note:** FBL is a 501(c)(3) nonprofit. The revenue model ensures financial sustainability for both chapters and national operations.
 
 ---
 

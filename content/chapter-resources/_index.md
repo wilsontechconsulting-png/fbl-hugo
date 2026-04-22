@@ -99,8 +99,9 @@ Starting and leading an FBL chapter requires intentionality. Here's what you're 
 
 ### Financial Considerations
 - **No franchise fees** — FBL is a nonprofit, not a franchise
-- **Chapter operational costs** — Venue, materials, refreshments (typically covered by member dues)
-- **Member dues structure** — Set locally but aligned with FBL guidelines
+- **Revenue sharing** — Chapter leaders remit 10% of total revenue to FBL national
+- **Chapter retention** — 90% of revenue stays with chapter for operations and leader compensation
+- **Member dues** — Set locally by chapter leader based on market and operational needs
 
 ---
 

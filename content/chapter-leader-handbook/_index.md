@@ -141,8 +141,8 @@ All FBL chapter members commit to these expectations:
 - ✅ Engage between meetings (accountability, collaboration)
 
 ### Financial Commitment
-- ✅ Pay monthly dues on time (typically $100-200/month, set locally)
-- ✅ Understand dues cover operational costs, not profit
+- ✅ Pay monthly dues on time (amount set locally by chapter leader)
+- ✅ Understand dues cover operational costs and chapter sustainability
 - ✅ Commit to 6-12 month minimum membership term
 
 ### Relational Integrity
@@ -242,7 +242,7 @@ Learn from chapter leaders who've built strong, sustainable chapters:
 **Solution:** Use FBL-provided discussion topics. Invite expert members to lead. Revisit core themes—they're evergreen.
 
 ### Challenge: Financial Strain on Members
-**Solution:** Offer flexible dues (reduced rate for short-term hardship). If someone can't afford dues long-term, help them exit with dignity.
+**Solution:** Address privately and compassionately. If someone experiences temporary hardship, consider flexible arrangements. If long-term affordability is an issue, help them exit with dignity.
 
 ### Challenge: Chapter Leader Burnout
 **Solution:** Delegate. Identify 2-3 members to co-facilitate, handle logistics, or lead specific initiatives. You don't have to do it all.

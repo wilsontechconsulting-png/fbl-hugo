@@ -46,7 +46,7 @@ Not everyone belongs in an FBL chapter. That's by design. Here's who does:
 ✅ **Financial Stability**
 - Financially stable enough to invest in membership
 - Not joining primarily to generate income or find clients
-- Can afford monthly dues without strain
+- Able to commit to membership investment without financial strain
 
 ### Character Criteria
 
@@ -91,9 +91,9 @@ Membership in an FBL chapter requires active commitment. Passive members dilute 
 ### Financial Standards
 
 ✅ **Monthly Dues**
-- Typically $100-200/month (set locally by chapter leader)
+- Amount set locally by chapter leader based on market and operational needs
 - Pays on time (within 5 days of due date)
-- Understands dues cover operational costs, not profit
+- Understands dues cover operational costs and chapter sustainability
 
 ✅ **Minimum 6-Month Commitment**
 - Initial commitment: 6-12 months
