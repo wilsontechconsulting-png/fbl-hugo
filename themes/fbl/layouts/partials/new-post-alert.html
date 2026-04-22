@@ -3,10 +3,10 @@
 {{ $recentPosts := first 1 $recentPosts }}
 
 {{ range $recentPosts }}
-  {{ $postAge := now.Sub .Date.Time }}
+  {{ $postAge := now.Sub .Date }}
   {{ $sevenDays := mul 7 24 60 60 1000000000 }}
   
-  {{ if lt $postAge.Nanoseconds $sevenDays }}
+  {{ if lt $postAge $sevenDays }}
   <div class="new-post-alert">
     <div class="container">
       <div class="alert-content">
