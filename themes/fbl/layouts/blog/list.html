@@ -10,19 +10,21 @@
     <section class="blog-list">
         <div class="container">
             {{ range .Pages }}
-            <article class="blog-card">
-                <div class="blog-meta">
-                    <time>{{ .Date.Format "January 2, 2006" }}</time>
-                    {{ with .Params.author }}
-                    <span class="author">by {{ . }}</span>
+            <a href="{{ .Permalink }}" class="blog-card-link">
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <time>{{ .Date.Format "January 2, 2006" }}</time>
+                        {{ with .Params.author }}
+                        <span class="author">by {{ . }}</span>
+                        {{ end }}
+                    </div>
+                    <h2>{{ .Title }}</h2>
+                    {{ with .Params.summary }}
+                    <p class="blog-summary">{{ . }}</p>
                     {{ end }}
-                </div>
-                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-                {{ with .Params.summary }}
-                <p class="blog-summary">{{ . }}</p>
-                {{ end }}
-                <a href="{{ .Permalink }}" class="read-more">Read More →</a>
-            </article>
+                    <span class="read-more">Read More →</span>
+                </article>
+            </a>
             {{ end }}
         </div>
     </section>
