@@ -2440,6 +2440,27 @@ body {
   gap: 0.5rem;
 }
 
+.cta-center .btn-secondary {
+  background: var(--fbl-green) !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cta-center .btn-secondary::before {
+  display: none;
+}
+
+.cta-center .btn-secondary:hover {
+  background: var(--green-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
+}
+
 @media (max-width: 768px) {
   .resource-grid {
     grid-template-columns: 1fr;
