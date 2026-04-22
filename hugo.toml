@@ -25,6 +25,10 @@ theme = 'fbl'
     url = '/chapters/'
     weight = 3
   [[menu.main]]
+    name = 'Insights'
+    url = '/blog/'
+    weight = 4
+  [[menu.main]]
     name = 'Apply'
     url = '/apply/'
-    weight = 4
+    weight = 5
