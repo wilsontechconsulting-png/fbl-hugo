@@ -2946,16 +2946,18 @@ a.btn-document:hover {
   align-items: center;
   gap: 1.5rem;
   padding: 1.5rem;
-  background: white;
+  background: rgba(15, 17, 30, 0.05);
   border: 1px solid rgba(15, 17, 30, 0.1);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1rem;
   transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .event-card:hover {
-  box-shadow: 0 4px 12px rgba(15, 17, 30, 0.08);
-  border-color: var(--fbl-green);
+  box-shadow: 0 4px 12px rgba(15, 17, 30, 0.12);
+  border-color: rgba(34, 197, 94, 0.3);
+  background: rgba(15, 17, 30, 0.08);
 }
 
 .event-date-box {
@@ -2963,12 +2965,13 @@ a.btn-document:hover {
   width: 80px;
   height: 80px;
   background: var(--midnight-blue);
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
+  box-shadow: 0 2px 8px rgba(15, 17, 30, 0.15);
 }
 
 .event-day {
