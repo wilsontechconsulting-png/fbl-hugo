@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Collaboration on Fellowship of Business Leaders</title><link>https://fbl.example.com/tags/collaboration/</link><description>Recent content in Collaboration on Fellowship of Business Leaders</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 22 Apr 2026 11:00:00 +0000</lastBuildDate><atom:link href="https://fbl.example.com/tags/collaboration/index.xml" rel="self" type="application/rss+xml"/><item><title>Stronger Together: Why Men and Women Both Belong at the Table</title><link>https://fbl.example.com/blog/stronger-together-men-and-women-in-leadership/</link><pubDate>Wed, 22 Apr 2026 11:00:00 +0000</pubDate><guid>https://fbl.example.com/blog/stronger-together-men-and-women-in-leadership/</guid><description>Leadership excellence isn&amp;rsquo;t about who gets the seat at the table. It&amp;rsquo;s about making sure the table is strong enough to hold the weight of what we&amp;rsquo;re building together.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collaboration on Fellowship of Business Leaders</title>
+    <link>http://localhost:1313/tags/collaboration/</link>
+    <description>Recent content in Collaboration on Fellowship of Business Leaders</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Apr 2026 11:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/collaboration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stronger Together: Why Men and Women Both Belong at the Table</title>
+      <link>http://localhost:1313/blog/stronger-together-men-and-women-in-leadership/</link>
+      <pubDate>Wed, 22 Apr 2026 11:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/stronger-together-men-and-women-in-leadership/</guid>
+      <description>Leadership excellence isn&amp;rsquo;t about who gets the seat at the table. It&amp;rsquo;s about making sure the table is strong enough to hold the weight of what we&amp;rsquo;re building together.</description>
+    </item>
+  </channel>
+</rss>

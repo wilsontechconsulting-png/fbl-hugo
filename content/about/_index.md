@@ -1,6 +1,6 @@
 ---
 title: "About FBL"
-description: "Learn about Fellowship of Business Leaders - our mission, vision, and the leaders building this network."
+description: "A faith-driven network of business leaders building with conviction and accountability."
 ---
 
 ## A Better Room for Business Leaders
