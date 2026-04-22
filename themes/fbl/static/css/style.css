@@ -502,6 +502,14 @@ body {
 }
 
 
+/* Section badges on light backgrounds */
+.section-light .section-badge {
+  background: var(--midnight-blue) !important;
+  border: 2px solid var(--fbl-green) !important;
+  color: white !important;
+  backdrop-filter: none !important;
+}
+
 .section-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
@@ -2880,10 +2888,4 @@ a.btn-document:hover {
   }
 }
 
-/* Section badges on light backgrounds */
-.section-light .section-badge {
-  background: var(--midnight-blue) !important;
-  border: 2px solid var(--fbl-green) !important;
-  color: white !important;
-  backdrop-filter: none !important;
-}
+/* Updated: Wed Apr 22 15:55:24 CDT 2026 */
