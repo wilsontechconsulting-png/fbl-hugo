@@ -161,6 +161,12 @@ We've created comprehensive resources to help you understand what it takes to la
     <p>Membership criteria, expectations, and quality standards.</p>
     <a href="/chapter-standards/" class="btn-secondary">View Standards</a>
   </div>
+
+  <div class="resource-card">
+    <h3>📄 Official Documents</h3>
+    <p>Downloadable policies, agreements, and required forms.</p>
+    <a href="/chapter-documents/" class="btn-secondary">Download Forms</a>
+  </div>
 </div>
 
 <div class="cta-center" style="margin-top: 3rem;">

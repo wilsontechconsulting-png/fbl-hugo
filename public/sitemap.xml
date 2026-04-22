@@ -97,6 +97,8 @@
   </url><url>
     <loc>http://localhost:1313/about/</loc>
   </url><url>
+    <loc>http://localhost:1313/chapter-documents/</loc>
+  </url><url>
     <loc>http://localhost:1313/chapter-leader-handbook/</loc>
   </url><url>
     <loc>http://localhost:1313/chapter-resources/</loc>
