@@ -1,1 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Accountability on Fellowship of Business Leaders</title><link>https://fbl.example.com/tags/accountability/</link><description>Recent content in Accountability on Fellowship of Business Leaders</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://fbl.example.com/tags/accountability/index.xml" rel="self" type="application/rss+xml"/><item><title>The Hidden Risk in Leadership: Isolation at the Top</title><link>https://fbl.example.com/blog/the-hidden-risk-in-leadership-isolation-at-the-top/</link><pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate><guid>https://fbl.example.com/blog/the-hidden-risk-in-leadership-isolation-at-the-top/</guid><description>Isolation is the silent risk most leaders never talk about. From the outside, executive life looks powerful — influence, authority, control. But at the top, circles get smaller. Conversations get filtered. And the higher you climb, the fewer people you can speak honestly with.</description></item><item><title>Building Accountability, Not Affirmation</title><link>https://fbl.example.com/blog/building-accountability-not-affirmation/</link><pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate><guid>https://fbl.example.com/blog/building-accountability-not-affirmation/</guid><description>Most leaders surround themselves with people who affirm their decisions. The best leaders surround themselves with people who challenge them.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Accountability on Fellowship of Business Leaders</title>
+    <link>http://localhost:1313/tags/accountability/</link>
+    <description>Recent content in Accountability on Fellowship of Business Leaders</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/accountability/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Hidden Risk in Leadership: Isolation at the Top</title>
+      <link>http://localhost:1313/blog/the-hidden-risk-in-leadership-isolation-at-the-top/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/the-hidden-risk-in-leadership-isolation-at-the-top/</guid>
+      <description>Isolation is the silent risk most leaders never talk about. From the outside, executive life looks powerful — influence, authority, control. But at the top, circles get smaller. Conversations get filtered. And the higher you climb, the fewer people you can speak honestly with.</description>
+    </item>
+    <item>
+      <title>Building Accountability, Not Affirmation</title>
+      <link>http://localhost:1313/blog/building-accountability-not-affirmation/</link>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/building-accountability-not-affirmation/</guid>
+      <description>Most leaders surround themselves with people who affirm their decisions. The best leaders surround themselves with people who challenge them.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,6 +1,6 @@
 ---
 title: "Beyond the Boys' Club: Building Excellence, Not Exclusion"
-date: 2026-04-17
+date: 2026-04-24
 author: "FBL Team"
 categories: ["Leadership", "Business"]
 tags: ["diversity", "excellence", "growth", "peer-leadership"]
