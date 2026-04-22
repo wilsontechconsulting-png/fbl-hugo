@@ -122,6 +122,12 @@ That's normal. The fastest clarity comes from reviewing the membership process a
 
 ---
 
+## Equal Opportunity Membership
+
+Fellowship of Business Leaders does not discriminate on the basis of race, color, national origin, gender, age, disability, or religious affiliation in membership decisions or program participation. All qualified applicants are evaluated based on professional merit, character, and alignment with FBL's mission and values.
+
+---
+
 ## Ready to Take the Next Step?
 
 Start the membership process and follow the steps to join.

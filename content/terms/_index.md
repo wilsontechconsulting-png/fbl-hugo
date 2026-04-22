@@ -22,7 +22,7 @@ By accessing or using FBL's website, applying for membership, or participating i
 
 Fellowship of Business Leaders is a 501(c)(3) nonprofit organization dedicated to creating a high-trust network of faith-driven business owners, operators, and executives.
 
-**Our Mission:** Build a structured environment for growth, accountability, and alignment where business, leadership, and faith are intentionally integrated.
+**Our Mission:** Fellowship of Business Leaders unites owners, executives, and professionals dedicated to living out their faith and values through business. Our mission is to inspire, equip, and mobilize leaders for transformative impact.
 
 **Physical Address:**  
 Fellowship of Business Leaders  
@@ -42,6 +42,10 @@ Union, KY 41091
 - Submission of an application does not guarantee acceptance
 - We reserve the right to reject any application without providing a reason
 - Assessment fees are non-refundable once paid
+
+### Equal Opportunity
+
+Fellowship of Business Leaders does not discriminate on the basis of race, color, national origin, gender, age, disability, or religious affiliation in membership decisions or program participation. All qualified applicants are evaluated based on professional merit, character, and alignment with FBL's mission.
 
 ### Membership Requirements
 
@@ -98,6 +102,7 @@ All FBL members and website users must:
 - **Maintain confidentiality** — Protect private member information and conversations shared within FBL
 - **Avoid pitch behavior** — FBL is not a sales forum or referral exchange
 - **Operate with integrity** — Conduct yourself honestly and ethically
+- **Respect nonprofit boundaries** — Do not use FBL for political activity, lobbying, legislative advocacy, or partisan purposes
 - **Respect nonprofit boundaries** — Do not use FBL for political activity, lobbying, or partisan purposes
 - **Protect the brand** — Do not misrepresent FBL or create unauthorized sub-brands
 

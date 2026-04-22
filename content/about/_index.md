@@ -3,11 +3,23 @@ title: "About FBL"
 description: "A faith-driven network of business leaders building with conviction and accountability."
 ---
 
+## Our Mission
+
+**Fellowship of Business Leaders unites owners, executives, and professionals dedicated to living out their faith and values through business. Our mission is to inspire, equip, and mobilize leaders for transformative impact.**
+
+---
+
 ## A Better Room for Business Leaders
 
 Fellowship of Business Leaders (FBL) exists to build a stronger room for business leaders across America—one grounded in trust, accountability, and real execution.
 
 Fellowship of Business Leaders is incorporated in Kentucky and recognized by the Internal Revenue Service as a **501(c)(3) public charity**. Contributions are tax-deductible to the extent permitted by law.
+
+---
+
+## Equal Opportunity & Nondiscrimination
+
+Fellowship of Business Leaders does not discriminate on the basis of race, color, national origin, gender, age, disability, or religious affiliation in its programs, activities, or membership. We welcome all qualified business leaders who align with our mission and values.
 
 ---
 
@@ -70,8 +82,8 @@ This is not about scale alone—it's about building strong rooms in the right pl
 
 ## Leadership Team
 
-### John E. Heater
-**President**
+### John Elvin Heater IV
+**Chair**
 
 Nonprofit executive with extensive experience in leadership, donor advancement, and community development.
 
@@ -80,7 +92,7 @@ Nonprofit executive with extensive experience in leadership, donor advancement, 
 
 Senior Advisor with over 26 years of experience helping individuals align finances with stewardship and purpose.
 
-### Jed Wilson
+### Jedediah D. Wilson
 **Treasurer & Founder**
 
 Business growth operator focused on systems, execution, and real performance across multiple industries.
