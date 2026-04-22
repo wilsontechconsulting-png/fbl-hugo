@@ -1,4 +1,4 @@
-baseURL = 'https://fbl.example.com/'
+baseURL = 'https://fblconnect.com/'
 languageCode = 'en-us'
 title = 'Fellowship of Business Leaders'
 theme = 'fbl'
