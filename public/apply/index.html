@@ -55,9 +55,11 @@
 
     <section class="apply-content">
         <div class="container">
-            <form name="fbl-application" method="POST" action="/membership-payment/" netlify netlify-honeypot="bot-field" class="application-form">
-                <input type="hidden" name="form-name" value="fbl-application" />
-                <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+            <form action="https://formspree.io/f/mzdykbar" method="POST" class="application-form">
+                
+                <input type="text" name="_gotcha" style="display:none" />
+                
+                <input type="hidden" name="_next" value="https://fblmavenmini.netlify.app/membership-payment/" />
 
                 
                 <div class="form-section">
