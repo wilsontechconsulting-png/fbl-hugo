@@ -113,8 +113,12 @@
   </url><url>
     <loc>http://localhost:1313/membership/</loc>
   </url><url>
+    <loc>http://localhost:1313/privacy/</loc>
+  </url><url>
     <loc>http://localhost:1313/search/</loc>
   </url><url>
     <loc>http://localhost:1313/start-a-chapter/</loc>
+  </url><url>
+    <loc>http://localhost:1313/terms/</loc>
   </url>
 </urlset>

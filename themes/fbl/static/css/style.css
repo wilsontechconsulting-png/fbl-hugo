@@ -2541,3 +2541,21 @@ a.btn-document {
 a.btn-document:hover {
   color: white !important;
 }
+
+/* Footer Address */
+.footer-address {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 1rem 0;
+}
+
+.footer-address a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-address a:hover {
+  color: var(--fbl-green);
+}
