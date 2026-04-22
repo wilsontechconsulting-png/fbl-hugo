@@ -4,6 +4,7 @@ date: 2026-04-20
 author: "FBL Team"
 summary: "Your faith and your business aren't separate compartments. They're meant to inform each other, strengthen each other, and operate as one integrated whole."
 image: "/images/blog/faith-and-business.jpg"
+image_credit: "Photo by Marvin Meyer on Unsplash"
 ---
 
 Your faith and your business aren't separate compartments. They're meant to inform each other, strengthen each other, and operate as one integrated whole.

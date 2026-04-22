@@ -3,6 +3,9 @@
     {{ with .Params.image }}
     <section class="post-hero-image">
         <img src="{{ . }}" alt="{{ $.Title }}" />
+        {{ with $.Params.image_credit }}
+        <div class="hero-image-credit">{{ . }}</div>
+        {{ end }}
     </section>
     {{ end }}
     <section class="post-hero">

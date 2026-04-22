@@ -615,6 +615,10 @@ body {
   box-shadow: 0 12px 30px rgba(34, 197, 94, 0.2), 0 0 0 1px var(--fbl-green);
 }
 
+.post-card-image-wrapper {
+  position: relative;
+}
+
 .post-card-image {
   position: relative;
   width: 100%;
@@ -630,6 +634,15 @@ body {
   object-position: center;
   transition: transform 0.3s ease;
   display: block;
+}
+
+.image-credit {
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.3);
+  padding: 0.25rem 0.75rem;
+  text-align: right;
+  font-style: italic;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .post-card-wrapper:hover .post-card-image img {
@@ -777,6 +790,7 @@ body {
   max-height: 30rem;
   overflow: hidden;
   background: var(--midnight-blue);
+  position: relative;
 }
 
 .blog-post .post-hero-image img {
@@ -784,6 +798,17 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.hero-image-credit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  font-style: italic;
 }
 
 .blog-post .post-hero {
