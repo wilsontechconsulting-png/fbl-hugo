@@ -2559,3 +2559,32 @@ a.btn-document:hover {
 .footer-address a:hover {
   color: var(--fbl-green);
 }
+
+/* Mission Statement Banner (Footer Top) */
+.mission-banner {
+  background: linear-gradient(135deg, var(--fbl-green) 0%, var(--green-dark) 100%);
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mission-text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: white;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .mission-banner {
+    padding: 2rem 0;
+  }
+
+  .mission-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+}
