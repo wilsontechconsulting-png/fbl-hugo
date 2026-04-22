@@ -126,4 +126,6 @@ That's normal. The fastest clarity comes from reviewing the membership process a
 
 Start the membership process and follow the steps to join.
 
-[Become a Member](/apply/)
+<div class="cta-center">
+  <a href="/apply/" class="btn-cta">Become a Member</a>
+</div>

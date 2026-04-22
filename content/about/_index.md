@@ -92,4 +92,6 @@ Business growth operator focused on systems, execution, and real performance acr
 
 Surround yourself with leaders who execute, lead with integrity, and build for impact.
 
-[Apply for Membership](/apply/)
+<div class="cta-center">
+  <a href="/apply/" class="btn-cta">Apply for Membership</a>
+</div>

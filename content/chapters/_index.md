@@ -143,4 +143,6 @@ If people already trust you, you can lead peers without needing control, and you
 
 Review the Chapter Start & Go Packet to understand the model, expectations, and next steps.
 
-[Contact Us About Starting a Chapter](/apply/)
+<div class="cta-center">
+  <a href="/apply/" class="btn-cta">Contact Us About Starting a Chapter</a>
+</div>
