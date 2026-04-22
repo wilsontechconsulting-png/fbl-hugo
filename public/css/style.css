@@ -306,7 +306,8 @@ body {
 
 .nav-link:hover {
   color: var(--midnight-blue);
-  background: rgba(15, 17, 30, 0.05);
+  background: rgba(15, 17, 30, 0.03);
+  border: 2px solid rgba(15, 17, 30, 0.08);
 }
 
 .nav-cta {
@@ -1066,7 +1067,8 @@ body {
   width: 100%;
   height: 14rem;
   overflow: hidden;
-  background: rgba(15, 17, 30, 0.05);
+  background: rgba(15, 17, 30, 0.03);
+  border: 2px solid rgba(15, 17, 30, 0.08);
 }
 
 .archive-card-image img {
@@ -2945,13 +2947,13 @@ a.btn-document:hover {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  padding: 1.5rem;
-  background: rgba(15, 17, 30, 0.05);
-  border: 1px solid rgba(15, 17, 30, 0.1);
-  border-radius: 16px;
-  margin-bottom: 1rem;
+  padding: 1.5rem 2rem;
+  background: #ffffff;
+  border: 2px solid rgba(15, 17, 30, 0.08);
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .event-card:hover {

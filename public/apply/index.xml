@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Covenant &#43; Membership Application on Fellowship of Business Leaders</title>
-    <link>http://localhost:1313/apply/</link>
-    <description>Recent content in Covenant &#43; Membership Application on Fellowship of Business Leaders</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/apply/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Covenant + Membership Application on Fellowship of Business Leaders</title><link>https://fblconnect.com/apply/</link><description>Recent content in Covenant + Membership Application on Fellowship of Business Leaders</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://fblconnect.com/apply/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
