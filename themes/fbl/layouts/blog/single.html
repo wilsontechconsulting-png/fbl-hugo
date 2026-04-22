@@ -10,13 +10,16 @@
     {{ end }}
     <section class="post-hero">
         <div class="container">
+            {{ with .Params.categories }}
+            <div class="section-badge">{{ index . 0 }}</div>
+            {{ end }}
+            <h1>{{ .Title }}</h1>
             <div class="post-meta">
                 <time>{{ .Date.Format "January 2, 2006" }}</time>
                 {{ with .Params.author }}
-                <span class="author">by {{ . }}</span>
+                <span class="author">• {{ . }}</span>
                 {{ end }}
             </div>
-            <h1>{{ .Title }}</h1>
         </div>
     </section>
 
