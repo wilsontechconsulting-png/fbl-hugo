@@ -85,6 +85,11 @@ Senior Advisor with over 26 years of experience helping individuals align financ
 
 Business growth operator focused on systems, execution, and real performance across multiple industries.
 
+### Becca Haggard
+**Board Member**
+
+Founder of That Girl Roofing, Becca brings decades of hands-on experience in the trades and entrepreneurial leadership. From kitchen and bath design to roofing operations, she has built a business focused on quality, customer satisfaction, and developing the next generation of skilled tradespeople.
+
 ---
 
 ## Ready to Step Into a Better Room?
