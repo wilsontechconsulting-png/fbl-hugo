@@ -2882,8 +2882,8 @@ a.btn-document:hover {
 
 /* Section badges on light backgrounds */
 .section-light .section-badge {
-  background: var(--midnight-blue);
-  border: 2px solid var(--fbl-green);
-  color: white;
-  backdrop-filter: none;
+  background: var(--midnight-blue) !important;
+  border: 2px solid var(--fbl-green) !important;
+  color: white !important;
+  backdrop-filter: none !important;
 }
