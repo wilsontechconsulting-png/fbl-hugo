@@ -1,0 +1,21 @@
+name: Set Custom Domain
+
+on:
+  workflow_dispatch:
+
+permissions:
+  pages: write
+  id-token: write
+
+jobs:
+  set-domain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set custom domain
+        run: |
+          echo "fblconnect.com" > CNAME
+      - name: Upload CNAME
+        uses: actions/upload-artifact@v3
+        with:
+          name: cname
+          path: CNAME
