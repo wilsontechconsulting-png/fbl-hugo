@@ -2,6 +2,8 @@
 title: "Welcome to Fellowship of Business Leaders"
 date: 2026-04-22
 author: "FBL Team"
+categories: ["FBL Updates"]
+tags: ["community", "introduction", "vision"]
 summary: "Introducing FBL - a new kind of leadership community built on conviction, accountability, and faith-driven excellence."
 image: "/images/blog/welcome-to-fbl.jpg"
 image_credit: "Photo by rawpixel.com on Unsplash"

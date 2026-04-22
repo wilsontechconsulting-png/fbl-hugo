@@ -2,6 +2,8 @@
 title: "The Hidden Risk in Leadership: Isolation at the Top"
 date: 2026-04-22
 author: "FBL Team"
+categories: ["Leadership", "Faith"]
+tags: ["accountability", "executive", "spiritual-growth"]
 summary: "Isolation is the silent risk most leaders never talk about. From the outside, executive life looks powerful — influence, authority, control. But at the top, circles get smaller. Conversations get filtered. And the higher you climb, the fewer people you can speak honestly with."
 image: "/images/blog/leadership-isolation.jpg"
 image_credit: "Photo by Qingbao Meng on Unsplash"

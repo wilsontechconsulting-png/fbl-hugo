@@ -1,32 +1,109 @@
 {{ define "main" }}
-<article class="blog-page">
-    <section class="page-hero">
+<article class="blog-archive">
+    <!-- Hero Section -->
+    <section class="blog-hero">
         <div class="container">
+            <div class="section-badge">Insights & Leadership</div>
             <h1>{{ .Title }}</h1>
-            <p class="page-subtitle">{{ .Description }}</p>
+            <p class="blog-hero-subtitle">{{ .Description }}</p>
         </div>
     </section>
 
-    <section class="blog-list">
+    <!-- Filter Bar -->
+    <section class="blog-filters">
         <div class="container">
-            {{ range .Pages }}
-            <a href="{{ .Permalink }}" class="blog-card-link">
-                <article class="blog-card">
-                    <div class="blog-meta">
-                        <time>{{ .Date.Format "January 2, 2006" }}</time>
-                        {{ with .Params.author }}
-                        <span class="author">by {{ . }}</span>
+            <div class="filter-label">Filter by category:</div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Posts</button>
+                {{ range .Site.Taxonomies.categories }}
+                <button class="filter-btn" data-category="{{ .Page.Title }}">{{ .Page.Title }}</button>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-archive-grid">
+                {{ range .Pages }}
+                <a href="{{ .Permalink }}" class="archive-card-wrapper" data-categories="{{ delimit .Params.categories "," }}">
+                    <article class="archive-card">
+                        {{ with .Params.image }}
+                        <div class="archive-card-image-wrapper">
+                            <div class="archive-card-image">
+                                <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+                            </div>
+                            {{ with $.Params.image_credit }}
+                            <div class="archive-image-credit">{{ . }}</div>
+                            {{ end }}
+                        </div>
                         {{ end }}
-                    </div>
-                    <h2>{{ .Title }}</h2>
-                    {{ with .Params.summary }}
-                    <p class="blog-summary">{{ . }}</p>
-                    {{ end }}
-                    <span class="read-more">Read More →</span>
-                </article>
-            </a>
-            {{ end }}
+                        <div class="archive-card-content">
+                            <div class="archive-card-meta">
+                                <time>{{ .Date.Format "January 2, 2006" }}</time>
+                                {{ with .Params.categories }}
+                                <span class="archive-categories">
+                                    {{ range first 1 . }}
+                                    <span class="category-badge">{{ . }}</span>
+                                    {{ end }}
+                                </span>
+                                {{ end }}
+                            </div>
+                            <h2>{{ .Title }}</h2>
+                            {{ with .Params.summary }}
+                            <p class="archive-card-summary">{{ . }}</p>
+                            {{ end }}
+                            <span class="archive-card-link">Read Article →</span>
+                        </div>
+                    </article>
+                </a>
+                {{ end }}
+            </div>
+
+            <div class="no-results" style="display: none;">
+                <p>No posts found in this category.</p>
+            </div>
         </div>
     </section>
 </article>
+
+<script>
+// Blog filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.archive-card-wrapper');
+    const noResults = document.querySelector('.no-results');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            
+            // Update active state
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter cards
+            let visibleCount = 0;
+            cards.forEach(card => {
+                const categories = card.getAttribute('data-categories');
+                
+                if (category === 'all' || categories.includes(category)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Show/hide no results message
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
 {{ end }}
