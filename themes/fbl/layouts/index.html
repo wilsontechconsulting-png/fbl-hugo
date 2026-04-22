@@ -107,7 +107,9 @@
         </div>
         
         <div class="blog-grid">
-            {{ range first 4 (where .Site.RegularPages "Section" "blog") }}
+            {{ $blogPages := where .Site.Pages "Type" "blog" }}
+            {{ $blogPages := where $blogPages "Kind" "page" }}
+            {{ range first 4 $blogPages }}
             <a href="{{ .Permalink }}" class="post-card-wrapper">
                 <article class="post-card">
                     {{ with .Params.image }}
@@ -134,6 +136,10 @@
             </a>
             {{ end }}
         </div>
+        
+        {{ if eq (len $blogPages) 0 }}
+        <p style="text-align: center; color: #666;">No blog posts found.</p>
+        {{ end }}
         
         <div class="section-cta">
             <a href="/blog/" class="btn btn-secondary">View All Insights</a>
