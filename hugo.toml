@@ -3,6 +3,11 @@ languageCode = 'en-us'
 title = 'Fellowship of Business Leaders'
 theme = 'fbl'
 
+# Publishing & Drafts
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
 [params]
   description = 'A faith-driven network of high-caliber business owners, operators, and executives building with conviction and accountability.'
 
@@ -10,6 +15,10 @@ theme = 'fbl'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS", "JSON"]
 
 [menu]
   [[menu.main]]
@@ -32,3 +41,7 @@ theme = 'fbl'
     name = 'Apply'
     url = '/apply/'
     weight = 5
+  [[menu.main]]
+    name = 'Search'
+    url = '/search/'
+    weight = 6

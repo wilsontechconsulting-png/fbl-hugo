@@ -1,0 +1,150 @@
+{{ define "main" }}
+<article class="search-page">
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="section-badge">Find What You Need</div>
+            <h1>Search <span class="text-accent">Insights</span></h1>
+            <p class="page-subtitle">Search all FBL blog posts, resources, and content.</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-content">
+        <div class="container">
+            <div class="search-box-wrapper">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    class="search-input" 
+                    placeholder="Search for topics, keywords, or titles..."
+                    autocomplete="off"
+                />
+                <svg class="search-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+            </div>
+
+            <div id="search-stats" class="search-stats"></div>
+            
+            <div id="search-results" class="search-results"></div>
+            
+            <div id="no-results" class="no-results" style="display: none;">
+                <svg width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <h3>No results found</h3>
+                <p>Try different keywords or browse <a href="/blog/">all insights</a></p>
+            </div>
+        </div>
+    </section>
+</article>
+
+<script>
+// Search functionality
+(function() {
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const searchStats = document.getElementById('search-stats');
+    const noResults = document.getElementById('no-results');
+    let searchIndex = [];
+
+    // Load search index
+    fetch('/index.json')
+        .then(response => response.json())
+        .then(data => {
+            searchIndex = data;
+            // Focus search input after load
+            searchInput.focus();
+        })
+        .catch(error => console.error('Error loading search index:', error));
+
+    // Search on input
+    searchInput.addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase().trim();
+        
+        if (query.length < 2) {
+            searchResults.innerHTML = '';
+            searchStats.innerHTML = '';
+            noResults.style.display = 'none';
+            return;
+        }
+
+        const results = searchIndex.filter(item => {
+            return item.title.toLowerCase().includes(query) ||
+                   item.content.toLowerCase().includes(query) ||
+                   (item.categories && item.categories.some(cat => cat.toLowerCase().includes(query))) ||
+                   (item.tags && item.tags.some(tag => tag.toLowerCase().includes(query)));
+        });
+
+        displayResults(results, query);
+    });
+
+    function displayResults(results, query) {
+        if (results.length === 0) {
+            searchResults.innerHTML = '';
+            searchStats.innerHTML = '';
+            noResults.style.display = 'block';
+            return;
+        }
+
+        noResults.style.display = 'none';
+        searchStats.innerHTML = `<p>Found <strong>${results.length}</strong> result${results.length !== 1 ? 's' : ''} for "${query}"</p>`;
+
+        const resultsHTML = results.map(result => {
+            const excerpt = getExcerpt(result.content, query);
+            const categories = result.categories ? result.categories.slice(0, 2).map(cat => 
+                `<span class="result-category">${cat}</span>`
+            ).join('') : '';
+
+            return `
+                <a href="${result.permalink}" class="search-result-card">
+                    <div class="result-meta">
+                        ${categories}
+                        <time>${formatDate(result.date)}</time>
+                    </div>
+                    <h3>${highlightText(result.title, query)}</h3>
+                    <p class="result-excerpt">${highlightText(excerpt, query)}</p>
+                    <span class="result-link">Read Article →</span>
+                </a>
+            `;
+        }).join('');
+
+        searchResults.innerHTML = resultsHTML;
+    }
+
+    function getExcerpt(content, query) {
+        const plainText = content.replace(/<[^>]*>/g, '');
+        const lowerContent = plainText.toLowerCase();
+        const lowerQuery = query.toLowerCase();
+        const index = lowerContent.indexOf(lowerQuery);
+        
+        if (index !== -1) {
+            const start = Math.max(0, index - 80);
+            const end = Math.min(plainText.length, index + query.length + 120);
+            let excerpt = plainText.substring(start, end);
+            
+            if (start > 0) excerpt = '...' + excerpt;
+            if (end < plainText.length) excerpt = excerpt + '...';
+            
+            return excerpt;
+        }
+        
+        return plainText.substring(0, 200) + '...';
+    }
+
+    function highlightText(text, query) {
+        if (!query) return text;
+        const regex = new RegExp(`(${query})`, 'gi');
+        return text.replace(regex, '<mark>$1</mark>');
+    }
+
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+})();
+</script>
+{{ end }}

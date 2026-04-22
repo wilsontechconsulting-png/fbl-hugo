@@ -34,5 +34,36 @@
             </div>
         </div>
     </section>
+
+    <!-- Related Posts -->
+    {{ $related := .Site.RegularPages.Related . | first 3 }}
+    {{ with $related }}
+    <section class="related-posts">
+        <div class="container">
+            <h2 class="related-title">Continue <span class="text-accent">Reading</span></h2>
+            <p class="related-subtitle">Related insights you might find valuable</p>
+            
+            <div class="related-grid">
+                {{ range . }}
+                <a href="{{ .Permalink }}" class="related-card">
+                    {{ with .Params.image }}
+                    <div class="related-card-image">
+                        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+                    </div>
+                    {{ end }}
+                    <div class="related-card-content">
+                        {{ with .Params.categories }}
+                        <span class="related-category">{{ index . 0 }}</span>
+                        {{ end }}
+                        <h3>{{ .Title }}</h3>
+                        <p class="related-summary">{{ .Params.summary }}</p>
+                        <span class="related-link">Read Article →</span>
+                    </div>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
 </article>
 {{ end }}

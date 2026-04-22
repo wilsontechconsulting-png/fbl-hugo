@@ -106,5 +106,7 @@
     <loc>http://localhost:1313/chapters/</loc>
   </url><url>
     <loc>http://localhost:1313/membership/</loc>
+  </url><url>
+    <loc>http://localhost:1313/search/</loc>
   </url>
 </urlset>
