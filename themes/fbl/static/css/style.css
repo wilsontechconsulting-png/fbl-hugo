@@ -2879,3 +2879,11 @@ a.btn-document:hover {
     line-height: 1.7;
   }
 }
+
+/* Section badges on light backgrounds */
+.section-light .section-badge {
+  background: var(--midnight-blue);
+  border: 2px solid var(--fbl-green);
+  color: white;
+  backdrop-filter: none;
+}
