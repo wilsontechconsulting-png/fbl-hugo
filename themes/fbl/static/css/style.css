@@ -2587,16 +2587,21 @@ a.btn-document:hover {
 .mission-banner {
   padding: 3rem 0;
   background: transparent;
+  text-align: center;
 }
 
 .mission-label {
+  display: inline-block;
   text-align: center;
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(15, 17, 30, 0.6);
-  margin-bottom: 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: white;
+  background: var(--midnight-blue);
+  border: 2px solid var(--midnight-blue);
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  margin: 0 auto 1.5rem;
 }
 
 .mission-pill {
@@ -2622,8 +2627,10 @@ a.btn-document:hover {
     padding: 2rem 0;
   }
 
+
   .mission-label {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
+    padding: 0.625rem 1.5rem;
     margin-bottom: 1rem;
   }
 
