@@ -490,21 +490,17 @@ body {
 
 .section-badge {
   display: inline-flex;
-  padding: 0.5rem 1rem;
-  background: var(--fbl-green);
-  border: 1px solid var(--green-dark);
+  padding: 0.625rem 1.25rem;
+  background: rgba(15, 17, 30, 0.6);
+  border: 2px solid var(--fbl-green);
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: white;
+  color: var(--fbl-green);
   margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
 }
 
-.section-dark .section-badge {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.8);
-}
 
 .section-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
@@ -946,9 +942,10 @@ body {
 }
 
 .blog-hero .section-badge {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.8);
+  background: rgba(15, 17, 30, 0.6);
+  border: 2px solid var(--fbl-green);
+  color: var(--fbl-green);
+  backdrop-filter: blur(10px);
 }
 
 .blog-hero h1 {
@@ -1484,9 +1481,10 @@ body {
 }
 
 .blog-post .post-hero .section-badge {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.8);
+  background: rgba(15, 17, 30, 0.6);
+  border: 2px solid var(--fbl-green);
+  color: var(--fbl-green);
+  backdrop-filter: blur(10px);
 }
 
 .blog-post h1 {
@@ -1682,9 +1680,10 @@ body {
 }
 
 .page-hero .section-badge {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.8);
+  background: rgba(15, 17, 30, 0.6);
+  border: 2px solid var(--fbl-green);
+  color: var(--fbl-green);
+  backdrop-filter: blur(10px);
 }
 
 .page-hero h1 {
