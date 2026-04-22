@@ -58,7 +58,6 @@ This is not about scale alone—it's about building strong rooms in the right pl
 
 ### Near-Term Growth
 - Tennessee
-- Texas
 - Missouri
 - Florida
 
