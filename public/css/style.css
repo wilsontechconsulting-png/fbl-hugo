@@ -984,9 +984,17 @@ body {
 
 .blog-archive-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   margin-bottom: 3rem;
+}
+
+/* Desktop: 2 columns */
+@media (min-width: 769px) {
+  .blog-archive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 }
 
 .archive-card-wrapper {
