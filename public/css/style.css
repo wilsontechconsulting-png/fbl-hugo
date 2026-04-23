@@ -2323,35 +2323,42 @@ body {
     grid-template-columns: 1fr;
 
 
-  /* Membership Criteria Section - Mobile */
+  /* Membership Criteria Section - Mobile (Redesigned for readability) */
   .section-dark .section-title {
-    font-size: clamp(1.75rem, 8vw, 2.5rem);
-    margin-bottom: 1.5rem;
+    font-size: 1.625rem;
+    margin-bottom: 1.25rem;
   }
 
   .criteria-list {
-    margin: 1.5rem auto;
+    margin: 1.25rem auto;
+    max-width: 100%;
   }
 
   .criteria-list li {
-    font-size: 0.9375rem;
-    padding: 0.875rem;
-    gap: 0.625rem;
-    line-height: 1.65;
-    border-radius: 0.625rem;
-    margin-bottom: 0.875rem;
+    font-size: 0.875rem;
+    padding: 0.75rem;
+    gap: 0.5rem;
+    line-height: 1.55;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .criteria-list li::before {
-    width: 1.125rem;
-    height: 1.125rem;
-    font-size: 0.6875rem;
-    margin-top: 0.125rem;
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.625rem;
+    margin-top: 0.0625rem;
+    flex-shrink: 0;
+  }
+  
+  .criteria-list .text-accent {
+    display: inline;
+    white-space: nowrap;
   }
 
   .section-closing {
-    font-size: 1.0625rem;
-    margin: 1.5rem 0;
+    font-size: 1rem;
+    margin: 1.25rem 0;
   }
   .footer-grid {
     grid-template-columns: 1fr;
