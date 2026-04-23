@@ -1,1 +1,61 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Insights &amp; Leadership on Fellowship of Business Leaders</title><link>https://fblconnect.com/blog/</link><description>Recent content in Insights &amp; Leadership on Fellowship of Business Leaders</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 22 Apr 2026 12:00:00 +0000</lastBuildDate><atom:link href="https://fblconnect.com/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Beyond the Boys' Club: Building Excellence, Not Exclusion</title><link>https://fblconnect.com/blog/beyond-the-boys-club-building-excellence-not-exclusion/</link><pubDate>Wed, 22 Apr 2026 12:00:00 +0000</pubDate><guid>https://fblconnect.com/blog/beyond-the-boys-club-building-excellence-not-exclusion/</guid><description>The strongest networks aren&amp;rsquo;t built on who you exclude. They&amp;rsquo;re built on who you&amp;rsquo;re willing to learn from, be challenged by, and grow alongside.</description></item><item><title>Stronger Together: Why Men and Women Both Belong at the Table</title><link>https://fblconnect.com/blog/stronger-together-men-and-women-in-leadership/</link><pubDate>Wed, 22 Apr 2026 11:00:00 +0000</pubDate><guid>https://fblconnect.com/blog/stronger-together-men-and-women-in-leadership/</guid><description>Leadership excellence isn&amp;rsquo;t about who gets the seat at the table. It&amp;rsquo;s about making sure the table is strong enough to hold the weight of what we&amp;rsquo;re building together.</description></item><item><title>The Hidden Risk in Leadership: Isolation at the Top</title><link>https://fblconnect.com/blog/the-hidden-risk-in-leadership-isolation-at-the-top/</link><pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate><guid>https://fblconnect.com/blog/the-hidden-risk-in-leadership-isolation-at-the-top/</guid><description>Isolation is the silent risk most leaders never talk about. From the outside, executive life looks powerful — influence, authority, control. But at the top, circles get smaller. Conversations get filtered. And the higher you climb, the fewer people you can speak honestly with.</description></item><item><title>Welcome to Fellowship of Business Leaders</title><link>https://fblconnect.com/blog/welcome-to-fbl/</link><pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate><guid>https://fblconnect.com/blog/welcome-to-fbl/</guid><description>Introducing FBL - a new kind of leadership community built on conviction, accountability, and faith-driven excellence.</description></item><item><title>Building Accountability, Not Affirmation</title><link>https://fblconnect.com/blog/building-accountability-not-affirmation/</link><pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate><guid>https://fblconnect.com/blog/building-accountability-not-affirmation/</guid><description>Most leaders surround themselves with people who affirm their decisions. The best leaders surround themselves with people who challenge them.</description></item><item><title>Faith and Business: Integration Over Compartmentalization</title><link>https://fblconnect.com/blog/faith-and-business-integration/</link><pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate><guid>https://fblconnect.com/blog/faith-and-business-integration/</guid><description>Your faith and your business aren&amp;rsquo;t separate compartments. They&amp;rsquo;re meant to inform each other, strengthen each other, and operate as one integrated whole.</description></item><item><title>First Quarterly Gathering - Save the Date</title><link>https://fblconnect.com/blog/first-quarterly-gathering-announcement/</link><pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate><guid>https://fblconnect.com/blog/first-quarterly-gathering-announcement/</guid><description>Join us for our inaugural quarterly gathering where leaders come together for strategic connection, accountability, and faith-driven growth.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Insights &amp; Leadership on Fellowship of Business Leaders</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Insights &amp; Leadership on Fellowship of Business Leaders</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Apr 2026 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beyond the Boys&#39; Club: Building Excellence, Not Exclusion</title>
+      <link>http://localhost:1313/blog/beyond-the-boys-club-building-excellence-not-exclusion/</link>
+      <pubDate>Wed, 22 Apr 2026 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/beyond-the-boys-club-building-excellence-not-exclusion/</guid>
+      <description>The strongest networks aren&amp;rsquo;t built on who you exclude. They&amp;rsquo;re built on who you&amp;rsquo;re willing to learn from, be challenged by, and grow alongside.</description>
+    </item>
+    <item>
+      <title>Stronger Together: Why Men and Women Both Belong at the Table</title>
+      <link>http://localhost:1313/blog/stronger-together-men-and-women-in-leadership/</link>
+      <pubDate>Wed, 22 Apr 2026 11:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/stronger-together-men-and-women-in-leadership/</guid>
+      <description>Leadership excellence isn&amp;rsquo;t about who gets the seat at the table. It&amp;rsquo;s about making sure the table is strong enough to hold the weight of what we&amp;rsquo;re building together.</description>
+    </item>
+    <item>
+      <title>The Hidden Risk in Leadership: Isolation at the Top</title>
+      <link>http://localhost:1313/blog/the-hidden-risk-in-leadership-isolation-at-the-top/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/the-hidden-risk-in-leadership-isolation-at-the-top/</guid>
+      <description>Isolation is the silent risk most leaders never talk about. From the outside, executive life looks powerful — influence, authority, control. But at the top, circles get smaller. Conversations get filtered. And the higher you climb, the fewer people you can speak honestly with.</description>
+    </item>
+    <item>
+      <title>Welcome to Fellowship of Business Leaders</title>
+      <link>http://localhost:1313/blog/welcome-to-fbl/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/welcome-to-fbl/</guid>
+      <description>Introducing FBL - a new kind of leadership community built on conviction, accountability, and faith-driven excellence.</description>
+    </item>
+    <item>
+      <title>Building Accountability, Not Affirmation</title>
+      <link>http://localhost:1313/blog/building-accountability-not-affirmation/</link>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/building-accountability-not-affirmation/</guid>
+      <description>Most leaders surround themselves with people who affirm their decisions. The best leaders surround themselves with people who challenge them.</description>
+    </item>
+    <item>
+      <title>Faith and Business: Integration Over Compartmentalization</title>
+      <link>http://localhost:1313/blog/faith-and-business-integration/</link>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/faith-and-business-integration/</guid>
+      <description>Your faith and your business aren&amp;rsquo;t separate compartments. They&amp;rsquo;re meant to inform each other, strengthen each other, and operate as one integrated whole.</description>
+    </item>
+    <item>
+      <title>First Quarterly Gathering - Save the Date</title>
+      <link>http://localhost:1313/blog/first-quarterly-gathering-announcement/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/first-quarterly-gathering-announcement/</guid>
+      <description>Join us for our inaugural quarterly gathering where leaders come together for strategic connection, accountability, and faith-driven growth.</description>
+    </item>
+  </channel>
+</rss>

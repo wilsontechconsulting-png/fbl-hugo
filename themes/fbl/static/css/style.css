@@ -619,10 +619,10 @@ body {
 .footer-brand .footer-logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.5rem;
   font-weight: 700;
   font-size: 1.125rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-logo-image {
@@ -2696,19 +2696,20 @@ a.btn-document:hover {
   padding: 3rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
+  margin-top: 4rem;
 }
 
 .mission-label {
   display: inline-block;
   background: rgba(15, 17, 30, 0.6);
   color: white;
-  padding: 0.375rem 1rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 9999px;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
