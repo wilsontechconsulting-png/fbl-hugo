@@ -2646,11 +2646,22 @@ a.btn-document:hover {
   }
 }
 
-/* MOBILE BLOG GRID FIX - FINAL OVERRIDE */
-@media (max-width: 768px) {
-  .blog-archive-grid {
+/* MOBILE BLOG GRID FIX - FINAL OVERRIDE WITH MAXIMUM SPECIFICITY */
+@media only screen and (max-width: 768px) {
+  /* Target with full context path for maximum specificity */
+  .blog-content .container .blog-archive-grid {
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
+  }
+  
+  /* Fallback with section context */
+  section .blog-archive-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Final fallback */
+  .blog-archive-grid {
+    grid-template-columns: 1fr !important;
   }
 }
