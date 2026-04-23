@@ -2354,6 +2354,7 @@ body {
     align-items: flex-start;
   }
 
+  /* Filter buttons grid - updated */
   .filter-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
