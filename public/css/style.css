@@ -702,36 +702,35 @@ body {
 .footer-bottom {
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.footer-main-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  gap: 1rem;
 }
 
-.footer-main-row p {
+.footer-copyright {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
   margin: 0;
 }
 
 .nonprofit-status {
-  text-align: center;
   font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.4);
   font-style: italic;
-  margin: 0.75rem 0 0 0;
+  margin: 0;
   line-height: 1.6;
+  flex: 1;
+  text-align: center;
 }
 
-.footer-bottom a {
+.footer-email {
+  font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
 }
 
-.footer-bottom a:hover {
+.footer-email:hover {
   color: var(--fbl-green);
 }
 
@@ -2374,25 +2373,28 @@ body {
     gap: 2rem;
   }
   
-  .footer-main-row {
+  .footer-bottom {
     flex-direction: column;
-    gap: 0.875rem;
+    gap: 1rem;
     text-align: center;
   }
   
-  .footer-main-row p {
+  .footer-copyright {
     font-size: 0.875rem;
-  }
-  
-  .footer-main-row a {
-    font-size: 0.9375rem;
-    display: block;
+    order: 1;
   }
 
   .nonprofit-status {
     font-size: 0.75rem;
     line-height: 1.7;
     padding: 0 1rem;
+    order: 2;
+    text-align: center;
+  }
+  
+  .footer-email {
+    font-size: 0.9375rem;
+    order: 3;
   }
   
   .footer-brand .footer-logo {
