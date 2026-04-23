@@ -600,7 +600,13 @@ body {
 .site-footer {
   background: var(--midnight-blue);
   color: white;
-  padding: 3rem 0;
+  padding: 4rem 0 3rem;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 3.5rem 0 3rem;
+  }
 }
 
 .footer-grid {
