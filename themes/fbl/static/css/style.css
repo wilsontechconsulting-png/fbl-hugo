@@ -2721,7 +2721,7 @@ a.btn-document:hover {
 
 @media (max-width: 768px) {
   .mission-banner {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 3rem;
   }
   
   .mission-label {
