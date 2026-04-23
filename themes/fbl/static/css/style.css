@@ -2645,3 +2645,12 @@ a.btn-document:hover {
     line-height: 1.7;
   }
 }
+
+/* MOBILE BLOG GRID FIX - FINAL OVERRIDE */
+@media (max-width: 768px) {
+  .blog-archive-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
