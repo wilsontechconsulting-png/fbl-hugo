@@ -699,6 +699,7 @@ body {
   color: var(--fbl-green);
 }
 
+/* Desktop footer layout: horizontal row */
 .footer-bottom {
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
