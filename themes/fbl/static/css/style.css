@@ -2231,6 +2231,21 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  /* Container mobile padding */
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Blog cards mobile overflow fix */
+  .archive-card-content {
+    padding: 1rem;
+  }
+
+  .archive-card-summary {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
   .mobile-menu-toggle {
     display: flex;
   }
