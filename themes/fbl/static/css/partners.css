@@ -1,0 +1,454 @@
+/* FBL Partner Program Page Styles */
+/* Scoped to .partners-page to avoid affecting other pages */
+
+/* Hero Section */
+.partners-page .page-hero {
+  padding: 8rem 0 6rem;
+  background: linear-gradient(135deg, var(--midnight-blue) 0%, #1a1d2e 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.partners-page .page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.partners-page .section-badge {
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.partners-page .page-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.partners-page .page-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Content Sections */
+.partners-page .partners-content {
+  background: white;
+}
+
+.partners-page .content-article > * {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section Styling */
+.partners-page .content-article h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--midnight-blue);
+  margin: 4rem 0 2rem;
+  line-height: 1.3;
+}
+
+.partners-page .content-article h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--midnight-blue);
+  margin: 3rem 0 1.5rem;
+  line-height: 1.4;
+}
+
+.partners-page .content-article h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--midnight-blue);
+  margin: 2rem 0 1rem;
+}
+
+.partners-page .content-article p {
+  color: rgba(15, 17, 30, 0.7);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+/* Partner Tier Cards */
+.partners-page .content-article h3 + p + p {
+  background: linear-gradient(135deg, white 0%, rgba(34, 197, 94, 0.02) 100%);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(15, 17, 30, 0.08);
+  margin: 2rem 0 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.partners-page .content-article h3 + p + p:hover {
+  border-color: rgba(34, 197, 94, 0.3);
+  box-shadow: 0 8px 30px rgba(34, 197, 94, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Lists */
+.partners-page .content-article ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.partners-page .content-article li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  color: rgba(15, 17, 30, 0.7);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.partners-page .content-article li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--fbl-green);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Table Styling */
+.partners-page table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2rem 0;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.partners-page table thead {
+  background: linear-gradient(135deg, var(--midnight-blue) 0%, #1a1d2e 100%);
+  color: white;
+}
+
+.partners-page table th {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.partners-page table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(15, 17, 30, 0.05);
+  color: rgba(15, 17, 30, 0.8);
+  font-size: 1rem;
+}
+
+.partners-page table tbody tr:hover {
+  background: rgba(34, 197, 94, 0.02);
+}
+
+.partners-page table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Blockquotes / Success Stories */
+.partners-page blockquote {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(34, 197, 94, 0.02) 100%);
+  border-left: 4px solid var(--fbl-green);
+  padding: 2rem 2.5rem;
+  margin: 2rem 0;
+  border-radius: 0 1rem 1rem 0;
+  font-style: italic;
+  color: rgba(15, 17, 30, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* CTAs & Buttons */
+.partners-page .cta-secondary {
+  text-align: center;
+  margin: 2.5rem 0;
+}
+
+.partners-page .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: white;
+  color: var(--midnight-blue);
+  border: 2px solid var(--midnight-blue);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.partners-page .btn-secondary:hover {
+  background: var(--midnight-blue);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 17, 30, 0.2);
+}
+
+/* Dividers */
+.partners-page hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(15, 17, 30, 0.1) 50%, transparent 100%);
+  margin: 4rem 0;
+}
+
+/* Info Cards / Panels */
+.partners-page .content-article > p:has(strong) {
+  background: linear-gradient(135deg, rgba(15, 17, 30, 0.02) 0%, rgba(15, 17, 30, 0.01) 100%);
+  padding: 1.5rem 2rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid var(--fbl-green);
+  margin: 2rem 0;
+}
+
+/* Partner Application Section */
+.partners-page .partner-application {
+  background: linear-gradient(180deg, white 0%, rgba(15, 17, 30, 0.02) 100%);
+  padding: 6rem 0;
+}
+
+.partners-page .section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.partners-page .section-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--midnight-blue);
+  margin-bottom: 1rem;
+}
+
+.partners-page .section-header p {
+  font-size: 1.1rem;
+  color: rgba(15, 17, 30, 0.6);
+}
+
+/* Form Styling (enhanced from base) */
+.partners-page .partner-form {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(15, 17, 30, 0.06);
+}
+
+.partners-page .form-section {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(15, 17, 30, 0.08);
+}
+
+.partners-page .form-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.partners-page .form-section h4 {
+  color: var(--midnight-blue);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.partners-page .form-section h4::before {
+  content: '';
+  width: 4px;
+  height: 1.5rem;
+  background: var(--fbl-green);
+  border-radius: 4px;
+}
+
+.partners-page .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.partners-page .form-group label {
+  display: block;
+  color: var(--midnight-blue);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.partners-page .form-group input,
+.partners-page .form-group select,
+.partners-page .form-group textarea {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  border: 2px solid rgba(15, 17, 30, 0.1);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.partners-page .form-group input:focus,
+.partners-page .form-group select:focus,
+.partners-page .form-group textarea:focus {
+  outline: none;
+  border-color: var(--fbl-green);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+}
+
+.partners-page .form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.partners-page .form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%230F111E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.25rem center;
+  padding-right: 3rem;
+}
+
+.partners-page .checkbox-group {
+  margin-bottom: 1rem;
+}
+
+.partners-page .checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.partners-page .checkbox-label:hover {
+  background: rgba(34, 197, 94, 0.03);
+}
+
+.partners-page .checkbox-label input[type="checkbox"] {
+  margin-top: 0.25rem;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  accent-color: var(--fbl-green);
+}
+
+.partners-page .checkbox-label span {
+  flex: 1;
+  color: rgba(15, 17, 30, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.partners-page .form-submit {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.partners-page .btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 3rem;
+  background: linear-gradient(135deg, var(--fbl-green) 0%, var(--green-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+}
+
+.partners-page .btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(34, 197, 94, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .partners-page .page-hero {
+    padding: 5rem 0 3rem;
+  }
+  
+  .partners-page .partner-form {
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+  }
+  
+  .partners-page .content-article h2 {
+    margin-top: 3rem;
+  }
+  
+  .partners-page table {
+    font-size: 0.9rem;
+  }
+  
+  .partners-page table th,
+  .partners-page table td {
+    padding: 1rem;
+  }
+  
+  .partners-page .form-submit .btn-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Text Accent Override */
+.partners-page .text-accent {
+  color: var(--fbl-green);
+  font-weight: 700;
+}
+
+/* Section Spacing */
+.partners-page .content-article {
+  padding: 4rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .partners-page .content-article {
+    padding: 3rem 1.5rem;
+  }
+}
