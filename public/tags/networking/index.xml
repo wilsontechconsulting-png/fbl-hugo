@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Networking on Fellowship of Business Leaders</title>
-    <link>http://localhost:1313/tags/networking/</link>
+    <link>https://fblconnect.com/tags/networking/</link>
     <description>Recent content in Networking on Fellowship of Business Leaders</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://fblconnect.com/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>First Quarterly Gathering - Save the Date</title>
-      <link>http://localhost:1313/blog/first-quarterly-gathering-announcement/</link>
+      <link>https://fblconnect.com/blog/first-quarterly-gathering-announcement/</link>
       <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/first-quarterly-gathering-announcement/</guid>
+      <guid>https://fblconnect.com/blog/first-quarterly-gathering-announcement/</guid>
       <description>Join us for our inaugural quarterly gathering where leaders come together for strategic connection, accountability, and faith-driven growth.</description>
     </item>
   </channel>
