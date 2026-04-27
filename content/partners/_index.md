@@ -316,33 +316,116 @@ Sign partner agreement, set up payment, and begin onboarding process. First comm
 
 Submit your information below and we'll review within 5 business days.
 
-**Company Information:**
-- Company Name
-- Industry / Category
-- Website
-- Primary Contact Name
-- Email Address
-- Phone Number
-
-**Partnership Details:**
-- Desired Tier (Founding / Growth / Strategic)
-- Why you want to partner with FBL
-- What value you'll provide FBL members
-- Member benefit you'll offer (15%+ discount or special pricing)
-- Expected ROI timeline
-
-**Commitment:**
-- I understand all communications must be FBL-approved
-- I commit to providing real value to FBL members
-- I agree to communication limits for my tier
-- I will honor the partner agreement terms
-
-<div class="cta-center">
-  <a href="mailto:partnerships@fblconnect.com?subject=FBL%20Partner%20Application&body=Company%20Name:%0D%0AIndustry:%0D%0AWebsite:%0D%0AContact%20Name:%0D%0AEmail:%0D%0APhone:%0D%0A%0D%0ADesired%20Tier:%0D%0A%0D%0AWhy%20FBL:%0D%0A%0D%0AMember%20Value:%0D%0A%0D%0AMember%20Benefit%20Offered:" class="btn-cta">Submit Partner Application</a>
-</div>
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="partner-form">
+  
+  <div class="form-section">
+    <h4>Company Information</h4>
+    
+    <div class="form-group">
+      <label for="company-name">Company Name *</label>
+      <input type="text" id="company-name" name="company-name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="industry">Industry / Category *</label>
+      <input type="text" id="industry" name="industry" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="website">Website *</label>
+      <input type="url" id="website" name="website" placeholder="https://" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="contact-name">Primary Contact Name *</label>
+      <input type="text" id="contact-name" name="contact-name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+  </div>
+  
+  <div class="form-section">
+    <h4>Partnership Details</h4>
+    
+    <div class="form-group">
+      <label for="tier">Desired Tier *</label>
+      <select id="tier" name="tier" required>
+        <option value="">Select a tier...</option>
+        <option value="founding">Founding Partner - $250/month</option>
+        <option value="growth">Growth Partner - $750/month</option>
+        <option value="strategic">Strategic Partner - $2,000/month</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="why-fbl">Why do you want to partner with FBL? *</label>
+      <textarea id="why-fbl" name="why-fbl" rows="4" required></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="member-value">What value will you provide FBL members? *</label>
+      <textarea id="member-value" name="member-value" rows="4" required></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="member-benefit">Member Benefit You'll Offer (15%+ discount or special pricing) *</label>
+      <textarea id="member-benefit" name="member-benefit" rows="3" required></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="roi-timeline">Expected ROI Timeline</label>
+      <input type="text" id="roi-timeline" name="roi-timeline" placeholder="e.g., 6-12 months">
+    </div>
+  </div>
+  
+  <div class="form-section">
+    <h4>Commitment</h4>
+    
+    <div class="form-group checkbox-group">
+      <label class="checkbox-label">
+        <input type="checkbox" name="commitment-communications" required>
+        <span>I understand all communications must be FBL-approved</span>
+      </label>
+    </div>
+    
+    <div class="form-group checkbox-group">
+      <label class="checkbox-label">
+        <input type="checkbox" name="commitment-value" required>
+        <span>I commit to providing real value to FBL members</span>
+      </label>
+    </div>
+    
+    <div class="form-group checkbox-group">
+      <label class="checkbox-label">
+        <input type="checkbox" name="commitment-limits" required>
+        <span>I agree to communication limits for my tier</span>
+      </label>
+    </div>
+    
+    <div class="form-group checkbox-group">
+      <label class="checkbox-label">
+        <input type="checkbox" name="commitment-agreement" required>
+        <span>I will honor the partner agreement terms</span>
+      </label>
+    </div>
+  </div>
+  
+  <div class="form-submit">
+    <button type="submit" class="btn-cta">Submit Partner Application</button>
+  </div>
+  
+</form>
 
 <p style="text-align: center; margin-top: 2rem; color: #94a3b8; font-size: 0.95rem;">
-  Or email us directly at <a href="mailto:partnerships@fblconnect.com" style="color: #22C55E;">partnerships@fblconnect.com</a>
+  Questions? Email us at <a href="mailto:partnerships@fblconnect.com" style="color: #22C55E;">partnerships@fblconnect.com</a>
 </p>
 
 </div>
