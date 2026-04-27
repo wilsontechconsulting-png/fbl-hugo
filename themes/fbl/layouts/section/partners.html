@@ -1,8 +1,7 @@
-{{ define "head" }}
-<link rel="stylesheet" href="/css/partners.css">
-{{ end }}
-
 {{ define "main" }}
+<style>
+{{ readFile "themes/fbl/static/css/partners.css" | safeCSS }}
+</style>
 <article class="partners-page">
     <section class="page-hero">
         <div class="container">
