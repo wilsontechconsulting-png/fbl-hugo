@@ -3193,3 +3193,12 @@ a.btn-document:hover {
     margin-bottom: 2rem;
   }
 }
+
+/* Light section overrides for better contrast */
+.section-light .section-content p {
+  color: rgba(15, 17, 30, 0.7);
+}
+
+.section-light .section-content .highlight {
+  color: rgba(15, 17, 30, 0.9);
+}
