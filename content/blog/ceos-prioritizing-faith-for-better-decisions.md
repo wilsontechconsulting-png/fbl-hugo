@@ -11,7 +11,7 @@ image_credit: "Photo by Austin Distel on Unsplash"
 
 There's a quiet shift happening in executive suites across America.
 
-More CEOs are bringing their faith back into the boardroom—not as a Sunday add-on, but as the lens through which they lead, decide, and build.
+More business leaders are bringing their faith back into the boardroom—not as a Sunday add-on, but as the lens through which they lead, decide, and build.
 
 And it's not about making companies "religious." It's about making decisions with conviction, clarity, and wisdom that goes deeper than quarterly earnings.
 
@@ -23,7 +23,7 @@ Recent conversations across business leadership networks reveal a striking patte
 
 **86% view hard work and diligence as an expression of their faith in action**—not separate from it.
 
-And increasingly, **CEOs are turning to prayer, peer accountability, and spiritual disciplines as core tools for better decision-making.**
+And increasingly, **business leaders are turning to prayer, peer accountability, and spiritual disciplines as core tools for better decision-making.**
 
 This isn't theory. This is what's actually happening among operators who are building real companies with real impact.
 
@@ -69,7 +69,7 @@ Leaders are scheduling time for it. Treating it as seriously as board meetings.
 
 ### Peer Accountability Forums
 
-Small groups of fellow business owners who know your numbers, challenge your blind spots, and speak truth when you need it.
+Small groups of fellow business leaders who know your numbers, challenge your blind spots, and speak truth when you need it.
 
 Not networking. **Real accountability.**
 
@@ -91,7 +91,7 @@ Your business becomes the canvas on which your beliefs are lived out.
 
 Across leadership networks, the message is consistent:
 
-✅ **CEOs are prioritizing faith at work for better decision-making**  
+✅ **Business leaders are prioritizing faith at work for better decision-making**  
 ✅ **Spiritual disciplines like prayer and stewardship are becoming core business tools**  
 ✅ **Leaders are seeking foundations (identity, delegation, holiness) to combat burnout**  
 ✅ **Communities celebrating "faith-business sharpening" are growing stronger every year**
@@ -121,7 +121,7 @@ We believe your deeply-held beliefs aren't separate from your business.
 
 ## The Better Room
 
-If you're a CEO, founder, or operator who's tired of compartmentalizing—who wants to lead with conviction instead of compromise—you're not alone.
+If you're a business leader who's tired of compartmentalizing—who wants to lead with conviction instead of compromise—you're not alone.
 
 There's a growing community of leaders who've decided:
 
