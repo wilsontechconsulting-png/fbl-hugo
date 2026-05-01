@@ -5,7 +5,7 @@ author: "FBL Team"
 categories: ["Leadership", "Faith"]
 tags: ["decision-making", "excellence", "stewardship", "accountability"]
 summary: "A growing movement of business leaders is rediscovering what works: integrating their deeply-held beliefs into daily operations—not as a nice-to-have, but as the foundation for clarity, wisdom, and sustainable success."
-image: "/images/blog/ceo-faith-decisions.jpg"
+image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80"
 image_credit: "Photo by Austin Distel on Unsplash"
 ---
 
