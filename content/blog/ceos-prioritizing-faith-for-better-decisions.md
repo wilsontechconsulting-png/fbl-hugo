@@ -73,7 +73,7 @@ Small groups of fellow business owners who know your numbers, challenge your bli
 
 Not networking. **Real accountability.**
 
-Groups like C12, FBL chapters, and faith-driven entrepreneur communities are creating the rooms where leaders sharpen each other—no fluff, no posturing.
+FBL chapters and faith-driven entrepreneur communities are creating the rooms where leaders sharpen each other—no fluff, no posturing.
 
 ### Excellence as Worship
 
