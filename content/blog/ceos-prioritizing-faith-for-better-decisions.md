@@ -9,7 +9,7 @@ image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80"
 image_credit: "Photo by Austin Distel on Unsplash"
 ---
 
-There's a quiet shift happening in executive suites across America.
+There's a quiet shift happening in business leadership across America.
 
 More business leaders are bringing their faith back into the boardroom—not as a Sunday add-on, but as the lens through which they lead, decide, and build.
 
@@ -25,7 +25,7 @@ Recent conversations across business leadership networks reveal a striking patte
 
 And increasingly, **business leaders are turning to prayer, peer accountability, and spiritual disciplines as core tools for better decision-making.**
 
-This isn't theory. This is what's actually happening among operators who are building real companies with real impact.
+This isn't theory. This is what's actually happening among business leaders who are building real companies with real impact.
 
 ## Why Faith-First Decision Making Works
 
@@ -98,7 +98,7 @@ Across leadership networks, the message is consistent:
 
 This isn't a movement started by consultants or thought leaders.
 
-**It's operators rediscovering what works.**
+**It's business leaders rediscovering what works.**
 
 ## Why Fellowship of Business Leaders Exists
 
@@ -147,4 +147,4 @@ If you're ready to surround yourself with leaders who execute, lead with integri
 
 ---
 
-*Fellowship of Business Leaders unites owners, executives, and professionals dedicated to living out their faith and values through business. Our mission is to inspire, equip, and mobilize leaders for transformative impact.*
+*Fellowship of Business Leaders unites business leaders dedicated to living out their faith and values through business. Our mission is to inspire, equip, and mobilize leaders for transformative impact.*
