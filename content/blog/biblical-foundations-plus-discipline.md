@@ -5,9 +5,9 @@ draft: false
 author: "Jed Wilson"
 categories: ["Leadership", "Faith & Business"]
 tags: ["Biblical Foundations", "Discipline", "Success", "Stewardship", "Scripture"]
-image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&auto=format&fit=crop&q=80"
-image_credit: "Nathan Dumlao on Unsplash"
-image_credit_url: "https://unsplash.com/@nate_dumlao"
+image: "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=1200&auto=format&fit=crop&q=80"
+image_credit: "Photo by Unsplash"
+image_credit_url: "https://unsplash.com"
 description: "Faith-driven business leaders are proving you don't have to choose between spiritual grounding and practical excellence. Here's the formula they're using: Success = Faith + Excellence + Systems."
 ---
 
