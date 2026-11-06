@@ -10,10 +10,8 @@ buildExpired = false
 
 [params]
   description = 'A faith-driven network of high-caliber business owners, operators, and executives building with conviction and accountability.'
-  # Form API endpoint - MUST be configured before forms will work
-  # Set to your Vercel project URL + /api/submit-form
-  # Example: https://fbl-forms.vercel.app/api/submit-form
-  formApiEndpoint = ''  # TODO: Configure after Vercel deployment
+  # Form API endpoint - Vercel production (confirmed working)
+  formApiEndpoint = 'https://fbl-forms.vercel.app/api/submit-form'
 
 [markup]
   [markup.goldmark]
