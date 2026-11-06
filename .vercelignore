@@ -1,0 +1,15 @@
+public
+resources
+.hugo_build.lock
+node_modules
+.git
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+PROJECT-HANDOFF.md
+reference/
+FORMSPREE-API-CREDENTIALS.md
+*.pem
+*.key

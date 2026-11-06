@@ -2,6 +2,7 @@
 <style>
 {{ readFile "themes/fbl/static/css/partners.css" | safeCSS }}
 </style>
+<link rel="stylesheet" href="/css/form-messages.css">
 <article class="partners-page">
     <section class="page-hero">
         <div class="container">
@@ -26,9 +27,9 @@
                 <p>Submit your information below and we'll review within 5 business days.</p>
             </div>
 
-            <form action="https://formspree.io/f/mzdykbar" method="POST" class="partner-form" autocomplete="on">
-                <!-- Formspree honeypot for spam protection -->
-                <input type="text" name="_gotcha" style="display:none" />
+            <form class="partner-form" autocomplete="on">
+                <!-- Honeypot for spam protection -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
                 <!-- Hidden field to identify this as partner application -->
                 <input type="hidden" name="_subject" value="FBL Partner Application" />
                 
@@ -144,4 +145,6 @@
         </div>
     </section>
 </article>
+
+<script src="/js/form-handler.js"></script>
 {{ end }}
