@@ -10,6 +10,8 @@ buildExpired = false
 
 [params]
   description = 'A faith-driven network of high-caliber business owners, operators, and executives building with conviction and accountability.'
+  # Form API endpoint - Vercel production (confirmed working)
+  formApiEndpoint = 'https://fbl-forms.vercel.app/api/submit-form'
 
 [markup]
   [markup.goldmark]

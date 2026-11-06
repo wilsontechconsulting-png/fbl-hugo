@@ -1,4 +1,5 @@
 {{ define "main" }}
+<link rel="stylesheet" href="/css/form-messages.css">
 <article class="apply-page">
     <section class="page-hero">
         <div class="container">
@@ -7,18 +8,12 @@
             <p class="page-subtitle">Complete the covenant acknowledgment and membership application below.</p>
         </div>
     </section>
-
+    
     <section class="apply-content">
         <div class="container">
-            <form action="https://formspree.io/f/mzdykbar" method="POST" class="application-form" autocomplete="on">
-                <!-- Formspree honeypot for spam protection -->
-                <input type="text" name="_gotcha" style="display:none" />
-                <!-- Redirect to payment page after submission -->
-                {{ if eq hugo.Environment "development" }}
-                <input type="hidden" name="_next" value="http://localhost:1313/membership-payment/" />
-                {{ else }}
-                <input type="hidden" name="_next" value="https://wilsontechconsulting-png.github.io/fbl-hugo/membership-payment/" />
-                {{ end }}
+            <form class="application-form" autocomplete="on" data-api-endpoint="{{ .Site.Params.formApiEndpoint }}">
+                <!-- Honeypot for spam protection -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
                 <!-- FBL Covenant -->
                 <div class="form-section">
@@ -474,4 +469,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+<script src="/js/form-handler.js"></script>
 {{ end }}

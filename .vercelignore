@@ -1,0 +1,45 @@
+# Vercel functions-only deployment - exclude everything except api/
+# Static Hugo site deploys separately via GitHub Pages
+
+# Hugo build artifacts (not needed for API)
+public/
+resources/
+.hugo_build.lock
+
+# Hugo source files (not needed for API)
+archetypes/
+content/
+data/
+i18n/
+layouts/
+static/css/
+static/js/
+themes/
+hugo.toml
+
+# Documentation (not needed for API)
+*.md
+!README.md
+
+# Development files
+node_modules/
+.git/
+.DS_Store
+*.log
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*credentials*
+*CREDENTIALS*
+*.pem
+*.key
+
+# Test files (not deployed)
+*.test.js
+
+# Artifacts and patches
+*.tar.gz
+*.patch
+*-manifest.txt
