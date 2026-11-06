@@ -175,26 +175,21 @@ Before production deployment, verify:
 
 ## Rollback Plan
 
-If issues occur in production:
+If forms need to be disabled:
 
-### Quick Rollback (5 minutes)
-1. Revert forms to Formspree temporarily:
-   ```html
-   <!-- In apply.html and partners.html -->
-   <form action="https://formspree.io/f/mzdykbar" method="POST">
-   ```
+### Graceful Disable
+Set `formApiEndpoint = ''` in `hugo.toml`:
+```toml
+[params]
+  formApiEndpoint = ''  # Forms show "not configured" message
+```
 
-2. Remove API endpoint:
-   ```bash
-   git revert <migration-commit>
-   git push origin main
-   ```
+Rebuild and deploy. Forms will show user-friendly error without submitting.
 
-### Permanent Rollback
-- Delete Vercel project
-- Remove API files
-- Restore Formspree integration
-- Update documentation
+### Remove Forms Entirely
+Comment out or remove form sections from layout files if needed.
+
+**Note:** Do not revert to Formspree or other external providers.
 
 ## Support & Troubleshooting
 

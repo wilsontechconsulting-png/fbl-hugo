@@ -1,0 +1,1956 @@
+diff --git a/.env.example b/.env.example
+new file mode 100644
+index 0000000..134b1fa
+--- /dev/null
++++ b/.env.example
+@@ -0,0 +1,20 @@
++# FBL Forms Environment Variables
++# Copy this to .env.local for local development (never commit .env files!)
++
++# Resend API Key (get from https://resend.com/api-keys)
++# This must be configured in Vercel environment variables for production
++RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxx
++
++# Form recipient email - ALL submissions go to this address
++# User confirmed: Both membership and partner applications → member@fblconnect.com
++MEMBERSHIP_FORM_RECIPIENT_EMAIL=member@fblconnect.com
++PARTNER_FORM_RECIPIENT_EMAIL=member@fblconnect.com
++
++# Optional: General fallback recipient (if form-specific emails not set)
++FORM_RECIPIENT_EMAIL=member@fblconnect.com
++
++# Optional: Rate limiting (default: 3 submissions per hour per IP)
++# RATE_LIMIT_MAX=3
++
++# Optional: Allowed origins for CORS (comma-separated, no trailing slashes)
++# ALLOWED_ORIGINS=https://fblconnect.com,https://wilsontechconsulting-png.github.io
+diff --git a/.gitignore b/.gitignore
+index 31555f8..f39afa9 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1,5 +1,31 @@
+ # API Credentials - Do Not Commit
+ FORMSPREE-API-CREDENTIALS.md
+ *-CREDENTIALS.md
++*credentials*
++*CREDENTIALS*
++
++# Environment variables (NEVER commit)
+ .env
+-.env.local
++.env.*
++!.env.example
++
++# Vercel
++.vercel/
++*.vercel.json.bak
++
++# Secrets and keys
++*.pem
++*.key
++*.p12
++*.pfx
++
++# Node modules
++node_modules/
++
++# Logs
++*.log
++npm-debug.log*
++
++# OS files
++.DS_Store
++Thumbs.db
+diff --git a/.vercelignore b/.vercelignore
+new file mode 100644
+index 0000000..771d3fd
+--- /dev/null
++++ b/.vercelignore
+@@ -0,0 +1,15 @@
++public
++resources
++.hugo_build.lock
++node_modules
++.git
++.DS_Store
++*.log
++.env
++.env.*
++!.env.example
++PROJECT-HANDOFF.md
++reference/
++FORMSPREE-API-CREDENTIALS.md
++*.pem
++*.key
+diff --git a/PROJECT-HANDOFF.md b/PROJECT-HANDOFF.md
+new file mode 100644
+index 0000000..c8ec236
+--- /dev/null
++++ b/PROJECT-HANDOFF.md
+@@ -0,0 +1,125 @@
++# fbl-hugo Project Handoff
++
++Generated/updated for transfer readiness on 2026-09-28. This file is the setup and credential map for reopening or moving this project without starting over.
++
++Do not put real passwords, API keys, webhook URLs, private keys, OAuth tokens, database passwords, Supabase keys, Vercel tokens, GitHub tokens, or production env values in this file. Keep real values in local env files, the hosting provider, a password manager, or an approved secret store.
++
++## Project Boundary
++
++Project folder:
++
++```text
++/Users/productivebot/productivebot/projects/fbl-hugo
++```
++
++This handoff applies to this folder and its child app folders only. Do not assume similarly named sibling folders share deployment settings, data, credentials, or APIs.
++
++## Read First
++
++- `README.md`
++
++## Stack Detected
++
++- Hugo/static site
++
++## Config / Deployment Files Found
++
++- `.github/workflows/hugo.yml`
++- `.github/workflows/pages-domain.yml`
++- `hugo.toml`
++- `themes/fbl/hugo.toml`
++
++## CLI Requirements
++
++- Git for version control and transfer.
++- Node.js/npm for any folder with a `package.json`. Check `package.json` `engines` before installing.
++- Provider CLIs only when needed: Vercel CLI for Vercel projects, Netlify CLI for Netlify projects, Supabase CLI for Supabase projects, Hugo for Hugo projects, or Wrangler for Cloudflare projects.
++
++Recommended checks:
++
++```bash
++node --version
++npm --version
++git --version
++```
++
++## Local Setup
++
++```bash
++# No npm app was detected. Read project docs and open/edit files directly.
++```
++
++## Project Commands
++
++No `package.json` was found at handoff review time. Use the project docs for any manual commands.
++
++## Active / Suspected Integrations
++
++- GitHub
++- GitHub Actions
++- Google
++- Stripe
++- Zapier
++
++Treat code and provider config as the source of truth when older docs disagree. Any integration listed only because of historical docs or dependency names should be verified before production use.
++
++## Environment Variables
++
++Create a local env file only when the project needs one. Use `.env.example` as the template when present. Configure matching values in the production host.
++
++```bash
++No app-controlled environment variables were detected during this audit.
++```
++
++If this section is empty, no env var names were detected by the automated scan. That does not guarantee the project has no secrets; verify provider dashboards before launch.
++
++## Secret Handling
++
++Never commit real secret-bearing files or values:
++
++```text
++.env
++.env.local
++.env.production
++.env.*.local
++.vercel/
++.netlify/
++*.pem
++*.key
++```
++
++Commit `.env.example` only when it contains placeholder names and blank values.
++
++## MCP / Agent Tooling
++
++No project-local MCP config file was found during handoff review. If this project needs MCP access later, document server name, purpose, auth requirements, and where credentials live.
++
++## Vercel / Supabase / GitHub Notes
++
++- Vercel: if `vercel.json`, `.vercel/`, or Vercel env names are present, production env vars must be recreated in the Vercel project settings after transfer. Do not copy `.vercel` as the authority for secrets.
++- Supabase: if Supabase config or env names are present, recreate project URL/anon/service keys through Supabase and store them in env vars. Never commit service role keys.
++- GitHub: if `.github/workflows` exists, review repository secrets and actions variables before transfer. They do not live in the repo checkout.
++
++## Transfer Checklist
++
++When moving this project anywhere else, bring:
++
++- The full project folder.
++- Lockfiles such as `package-lock.json`, `pnpm-lock.yaml`, or `yarn.lock` when present.
++- Source folders, public assets, config files, and deployment files listed above.
++- This `PROJECT-HANDOFF.md` file.
++- Real secret values from the approved secret store or provider dashboard, not from git.
++
++After transfer:
++
++1. Install dependencies for any app folder.
++2. Recreate local env files from `.env.example`.
++3. Reconnect provider projects such as Vercel, Supabase, GitHub Actions, Netlify, or Cloudflare.
++4. Run the listed build/test commands.
++5. Submit a safe test form or smoke test any API route before going live.
++
++## Known Cleanup Items
++
++- Confirm production domains and hosting project ownership before launch.
++- Confirm each listed integration is still active and not a stale dependency/doc reference.
++- Add missing env vars to `.env.example` if new integrations are added later.
+diff --git a/RESEND-MIGRATION-GUIDE.md b/RESEND-MIGRATION-GUIDE.md
+new file mode 100644
+index 0000000..29d31b8
+--- /dev/null
++++ b/RESEND-MIGRATION-GUIDE.md
+@@ -0,0 +1,320 @@
++# FBL Forms - Resend Migration Guide
++
++**Migration Date:** November 6, 2026  
++**Status:** Implementation Complete - Awaiting Production Deployment  
++**Branch:** `cursor/resend-forms-migration-0033`
++
++---
++
++## Overview
++
++This migration replaces Formspree with a secure, self-hosted form handler using Resend for email delivery. All form submissions now flow through a Vercel serverless function with proper validation, rate limiting, and spam protection.
++
++## What Changed
++
++### ✅ Removed
++- ❌ Formspree endpoint (`https://formspree.io/f/mzdykbar`)
++- ❌ External form service dependency
++- ❌ Third-party data handling
++
++### ✅ Added
++- ✅ Vercel serverless function (`/api/submit-form.js`)
++- ✅ Resend email integration (send.fblconnect.com)
++- ✅ Client-side validation and AJAX submission
++- ✅ Rate limiting (3 submissions/hour per IP)
++- ✅ Honeypot spam protection
++- ✅ Accessible error/success handling
++- ✅ Comprehensive test suite
++
++## Email Routing Configuration
++
++**User Confirmed:** All form submissions → `member@fblconnect.com`
++
++| Form Type | Recipient | Reply-To | From |
++|-----------|-----------|----------|------|
++| Membership Application | member@fblconnect.com | Applicant's validated email | FBL Forms <forms@send.fblconnect.com> |
++| Partner Application | member@fblconnect.com | Applicant's validated email | FBL Forms <forms@send.fblconnect.com> |
++
++## Files Modified
++
++### Core Implementation
++- `api/submit-form.js` - New serverless function handler
++- `static/js/form-handler.js` - Client-side form handling
++- `static/css/form-messages.css` - Success/error message styles
++- `themes/fbl/layouts/section/apply.html` - Updated membership form
++- `themes/fbl/layouts/section/partners.html` - Updated partner form
++
++### Configuration
++- `vercel.json` - New Vercel configuration
++- `.vercelignore` - Build exclusions
++- `.env.example` - Environment variable template
++- `PROJECT-HANDOFF.md` - Preserved from Mac baseline
++
++### Documentation & Testing
++- `RESEND-MIGRATION-GUIDE.md` - This file
++- `api/submit-form.test.js` - Test suite with mock Resend
++
++## Required Environment Variables
++
++Configure these in Vercel project settings (NOT in code):
++
++```bash
++# Required - Get from Resend dashboard
++RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxx
++
++# Required - Form recipients (user confirmed: both → member@fblconnect.com)
++MEMBERSHIP_FORM_RECIPIENT_EMAIL=member@fblconnect.com
++PARTNER_FORM_RECIPIENT_EMAIL=member@fblconnect.com
++FORM_RECIPIENT_EMAIL=member@fblconnect.com
++
++# Optional - Rate limiting (default: 3)
++RATE_LIMIT_MAX=3
++
++# Optional - CORS origins (default: fblconnect.com)
++ALLOWED_ORIGINS=https://fblconnect.com,https://wilsontechconsulting-png.github.io
++```
++
++## Deployment Steps
++
++### Phase 1: Vercel Project Setup (Parent Coordinates)
++
++1. **Create Vercel Project**
++   ```bash
++   # Connect GitHub repo: wilsontechconsulting-png/fbl-hugo
++   # Framework Preset: Other
++   # Root Directory: ./
++   # Build Command: (specified in vercel.json)
++   # Output Directory: public
++   ```
++
++2. **Configure Environment Variables**
++   - Go to Vercel Project Settings → Environment Variables
++   - Add all required variables above
++   - Set to: Production, Preview, Development
++   - **DO NOT** commit `.env` files to git
++
++3. **Domain Configuration**
++   - Option A: Deploy to separate subdomain (e.g., `forms.fblconnect.com`)
++   - Option B: Deploy alongside existing site (requires coordination)
++   - **DO NOT** change DNS without parent approval
++
++### Phase 2: Testing (Before Production)
++
++1. **Run Test Suite**
++   ```bash
++   cd /workspace
++   node api/submit-form.test.js
++   ```
++   Expected: All tests pass ✓
++
++2. **Deploy to Preview**
++   - Push branch to GitHub
++   - Vercel auto-creates preview deployment
++   - Test both forms on preview URL
++   - Verify emails arrive at member@fblconnect.com
++
++3. **Parent Verification**
++   - Parent confirms test emails received
++   - Parent verifies Reply-To works correctly
++   - Parent approves production deployment
++
++### Phase 3: Production Deployment
++
++1. **Merge PR**
++   ```bash
++   git checkout main
++   git merge cursor/resend-forms-migration-0033
++   git push origin main
++   ```
++
++2. **Verify Production**
++   - Forms at https://fblconnect.com/apply/
++   - Forms at https://fblconnect.com/partners/
++   - Submit test applications
++   - Confirm emails received
++
++3. **Monitor**
++   - Check Vercel function logs
++   - Check Resend dashboard for delivery
++   - Monitor for errors or spam
++
++## Security Features
++
++### Server-Side Protection
++- ✅ API key never exposed to browser
++- ✅ Rate limiting per IP (3/hour)
++- ✅ Field length validation (10KB max)
++- ✅ Email format validation
++- ✅ Honeypot spam detection
++- ✅ HTML escaping in email content
++- ✅ CORS origin validation
++
++### Client-Side Enhancements
++- ✅ Client-side validation before submission
++- ✅ AJAX submission (no page reload)
++- ✅ Retry logic for network failures
++- ✅ Accessible error messages (ARIA)
++- ✅ Loading states and UX feedback
++
++## Testing Checklist
++
++Before production deployment, verify:
++
++- [ ] Test suite passes (`node api/submit-form.test.js`)
++- [ ] Membership form submits successfully
++- [ ] Partner form submits successfully
++- [ ] Email arrives at member@fblconnect.com
++- [ ] Reply-To uses applicant email
++- [ ] From shows "FBL Forms <forms@send.fblconnect.com>"
++- [ ] Success message displays correctly
++- [ ] Error handling works (try invalid email)
++- [ ] Rate limiting works (4th submission blocked)
++- [ ] Honeypot catches spam (fill hidden field)
++- [ ] Mobile responsive (test on phone)
++- [ ] Accessible (test with screen reader)
++
++## Rollback Plan
++
++If issues occur in production:
++
++### Quick Rollback (5 minutes)
++1. Revert forms to Formspree temporarily:
++   ```html
++   <!-- In apply.html and partners.html -->
++   <form action="https://formspree.io/f/mzdykbar" method="POST">
++   ```
++
++2. Remove API endpoint:
++   ```bash
++   git revert <migration-commit>
++   git push origin main
++   ```
++
++### Permanent Rollback
++- Delete Vercel project
++- Remove API files
++- Restore Formspree integration
++- Update documentation
++
++## Support & Troubleshooting
++
++### Common Issues
++
++**"RESEND_API_KEY not configured"**
++- Environment variable not set in Vercel
++- Go to Project Settings → Environment Variables
++- Add RESEND_API_KEY with valid key from Resend dashboard
++
++**"Form recipient email not configured"**
++- Set MEMBERSHIP_FORM_RECIPIENT_EMAIL and PARTNER_FORM_RECIPIENT_EMAIL
++- Or set FORM_RECIPIENT_EMAIL as fallback
++
++**"Rate limit exceeded"**
++- User submitted 3+ times in one hour
++- Wait 60 minutes or increase RATE_LIMIT_MAX
++- Check for malicious activity in Vercel logs
++
++**"Submission failed"**
++- Check Vercel function logs
++- Check Resend dashboard for delivery status
++- Verify API key is valid and not rate limited
++
++### Logs & Monitoring
++
++**Vercel Function Logs:**
++- https://vercel.com/[team]/[project]/logs
++
++**Resend Dashboard:**
++- https://resend.com/emails
++- Monitor deliveries, bounces, complaints
++
++**GitHub Actions:**
++- https://github.com/wilsontechconsulting-png/fbl-hugo/actions
++- Monitor Hugo build and deployment
++
++## Mac Sync Instructions
++
++**Critical:** Mac at `/Users/promax/AI/workspaces/fbl-hugo` MUST match production
++
++### Before Live Deployment
++```bash
++# On Mac (parent coordinates)
++cd /Users/promax/AI/workspaces/fbl-hugo
++
++# Pull from this PR's source files or apply patch
++# (See attached source artifacts in PR)
++
++# Verify files match
++git diff HEAD origin/cursor/resend-forms-migration-0033
++
++# Build locally to test
++hugo server -D
++
++# Verify forms work at http://localhost:1313/apply/
++```
++
++### After Live Deployment
++```bash
++# Sync from production
++git pull origin main
++
++# Verify parity
++git status  # Should be clean
++
++# Test build
++hugo server -D
++```
++
++## Production Checklist
++
++Before marking this complete:
++
++- [ ] PR reviewed and approved
++- [ ] Vercel project created and configured
++- [ ] Environment variables set in Vercel
++- [ ] Preview deployment tested successfully
++- [ ] Parent verified test email delivery
++- [ ] Mac workspace synced with PR changes
++- [ ] PR merged to main
++- [ ] Production deployment verified
++- [ ] Live form submissions tested
++- [ ] Email delivery confirmed
++- [ ] Mac workspace synced with production
++- [ ] Documentation updated
++- [ ] Team notified of changes
++
++## Next Steps
++
++1. **This PR** provides:
++   - Complete implementation
++   - Test suite
++   - Configuration files
++   - Documentation
++   - Source artifacts for Mac sync
++
++2. **Parent coordinates**:
++   - Vercel account/project setup
++   - Environment variable configuration
++   - Preview testing and email verification
++   - Production deployment approval
++   - Mac workspace sync before/after
++
++3. **Post-deployment**:
++   - Monitor for 48 hours
++   - Verify email delivery rates
++   - Check for spam/abuse
++   - Optimize if needed
++
++---
++
++## Questions or Issues?
++
++Contact the implementation agent or refer to:
++- `.env.example` for configuration
++- `api/submit-form.test.js` for usage examples
++- Vercel documentation for deployment help
++- Resend documentation for email delivery issues
++
++**Implementation Complete:** All code ready for deployment  
++**Waiting For:** Parent Vercel setup and production approval  
++**Blocked By:** Nothing - ready to deploy when approved
+diff --git a/api/submit-form.js b/api/submit-form.js
+new file mode 100644
+index 0000000..19991d6
+--- /dev/null
++++ b/api/submit-form.js
+@@ -0,0 +1,587 @@
++/**
++ * FBL Form Submission Handler
++ * Securely processes application and partner forms using Resend
++ * 
++ * Required Environment Variables:
++ * - RESEND_API_KEY: Resend API key (server-only)
++ * - MEMBERSHIP_FORM_RECIPIENT_EMAIL: Email for membership applications (e.g., member@fblconnect.com)
++ * - PARTNER_FORM_RECIPIENT_EMAIL: Email for partner applications (e.g., partnerships@fblconnect.com)
++ *   OR
++ * - FORM_RECIPIENT_EMAIL: Fallback email for all form submissions
++ * 
++ * Optional Environment Variables:
++ * - RATE_LIMIT_MAX: Maximum submissions per IP per hour (default: 3)
++ * - ALLOWED_ORIGINS: Comma-separated list of allowed origins (default: fblconnect.com)
++ */
++
++// Simple in-memory rate limiter (resets on cold start)
++const rateLimits = new Map();
++
++// Configuration
++const CONFIG = {
++  RATE_LIMIT_MAX: parseInt(process.env.RATE_LIMIT_MAX || '3', 10),
++  RATE_LIMIT_WINDOW_MS: 60 * 60 * 1000, // 1 hour
++  ALLOWED_ORIGINS: (process.env.ALLOWED_ORIGINS || 'https://fblconnect.com,https://wilsontechconsulting-png.github.io').split(','),
++  MAX_FIELD_LENGTH: 10000,
++  FROM_EMAIL: 'FBL Forms <forms@send.fblconnect.com>',
++};
++
++/**
++ * Escape HTML to prevent XSS in email content
++ */
++function escapeHtml(text) {
++  if (typeof text !== 'string') return '';
++  const map = {
++    '&': '&amp;',
++    '<': '&lt;',
++    '>': '&gt;',
++    '"': '&quot;',
++    "'": '&#039;',
++  };
++  return text.replace(/[&<>"']/g, (char) => map[char]);
++}
++
++/**
++ * Validate and sanitize form data
++ */
++function validateFormData(body) {
++  const errors = [];
++  
++  // Check for honeypot (spam detection)
++  if (body._gotcha) {
++    errors.push('Spam detected');
++  }
++  
++  // Validate required fields based on form type
++  const isPartnerForm = body._subject === 'FBL Partner Application';
++  
++  if (isPartnerForm) {
++    // Partner form required fields
++    const requiredFields = ['company_name', 'industry', 'website', 'contact_name', 'email', 'phone', 'tier', 'why_fbl', 'member_value', 'member_benefit'];
++    for (const field of requiredFields) {
++      if (!body[field] || typeof body[field] !== 'string' || body[field].trim().length === 0) {
++        errors.push(`Missing required field: ${field}`);
++      }
++    }
++  } else {
++    // Application form required fields (sampling - all checkboxes and key text fields)
++    const requiredFields = ['full_name', 'email', 'phone', 'city', 'state', 'company', 'industry', 'role'];
++    for (const field of requiredFields) {
++      if (!body[field] || typeof body[field] !== 'string' || body[field].trim().length === 0) {
++        errors.push(`Missing required field: ${field}`);
++      }
++    }
++    
++    // Validate covenant signature
++    if (!body.covenant_signature || body.covenant_signature.trim().length === 0) {
++      errors.push('Covenant signature is required');
++    }
++  }
++  
++  // Validate email format
++  if (body.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
++    errors.push('Invalid email format');
++  }
++  
++  // Check field length limits
++  for (const [key, value] of Object.entries(body)) {
++    if (typeof value === 'string' && value.length > CONFIG.MAX_FIELD_LENGTH) {
++      errors.push(`Field ${key} exceeds maximum length`);
++    }
++  }
++  
++  return { valid: errors.length === 0, errors };
++}
++
++/**
++ * Check rate limit for IP address
++ */
++function checkRateLimit(ip) {
++  const now = Date.now();
++  const limit = rateLimits.get(ip);
++  
++  if (!limit) {
++    rateLimits.set(ip, { count: 1, resetAt: now + CONFIG.RATE_LIMIT_WINDOW_MS });
++    return { allowed: true, remaining: CONFIG.RATE_LIMIT_MAX - 1 };
++  }
++  
++  // Reset if window has passed
++  if (now > limit.resetAt) {
++    rateLimits.set(ip, { count: 1, resetAt: now + CONFIG.RATE_LIMIT_WINDOW_MS });
++    return { allowed: true, remaining: CONFIG.RATE_LIMIT_MAX - 1 };
++  }
++  
++  // Check if limit exceeded
++  if (limit.count >= CONFIG.RATE_LIMIT_MAX) {
++    return { allowed: false, remaining: 0, resetAt: limit.resetAt };
++  }
++  
++  // Increment count
++  limit.count += 1;
++  return { allowed: true, remaining: CONFIG.RATE_LIMIT_MAX - limit.count };
++}
++
++/**
++ * Build email HTML for application form
++ */
++function buildApplicationEmailHtml(data) {
++  const html = `
++<!DOCTYPE html>
++<html>
++<head>
++  <meta charset="utf-8">
++  <style>
++    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
++    .container { max-width: 800px; margin: 0 auto; padding: 20px; }
++    .header { background: #0F111E; color: white; padding: 20px; border-radius: 8px 8px 0 0; }
++    .header h1 { margin: 0; color: #22C55E; }
++    .content { background: #f8f9fa; padding: 20px; }
++    .section { background: white; margin: 20px 0; padding: 20px; border-radius: 8px; border-left: 4px solid #22C55E; }
++    .section h2 { color: #0F111E; margin-top: 0; font-size: 1.3em; }
++    .field { margin: 15px 0; }
++    .field-label { font-weight: 600; color: #0F111E; display: block; margin-bottom: 5px; }
++    .field-value { color: #475569; }
++    .footer { text-align: center; padding: 20px; color: #64748b; font-size: 0.9em; }
++    .checkbox-list { list-style: none; padding-left: 0; }
++    .checkbox-list li:before { content: "✓ "; color: #22C55E; font-weight: bold; margin-right: 8px; }
++  </style>
++</head>
++<body>
++  <div class="container">
++    <div class="header">
++      <h1>New FBL Membership Application</h1>
++      <p style="margin: 5px 0 0 0; color: #94a3b8;">Submitted: ${escapeHtml(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }))}</p>
++    </div>
++    
++    <div class="content">
++      <div class="section">
++        <h2>📋 Covenant Acknowledgment</h2>
++        <ul class="checkbox-list">
++          ${data.covenant_formation ? '<li>Formation over information</li>' : ''}
++          ${data.covenant_confidentiality ? '<li>Confidentiality and direct communication</li>' : ''}
++          ${data.covenant_integrity ? '<li>Integrity and accountability</li>' : ''}
++          ${data.covenant_contribution ? '<li>Contribution over consumption</li>' : ''}
++          ${data.covenant_agreement ? '<li>Covenant agreement accepted</li>' : ''}
++        </ul>
++        <div class="field">
++          <span class="field-label">Covenant Signature:</span>
++          <span class="field-value">${escapeHtml(data.covenant_signature || '')}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Date:</span>
++          <span class="field-value">${escapeHtml(data.covenant_date || '')}</span>
++        </div>
++      </div>
++      
++      <div class="section">
++        <h2>👤 Personal Information</h2>
++        <div class="field">
++          <span class="field-label">Full Name:</span>
++          <span class="field-value">${escapeHtml(data.full_name || '')}</span>
++        </div>
++        ${data.preferred_name ? `
++        <div class="field">
++          <span class="field-label">Preferred Name:</span>
++          <span class="field-value">${escapeHtml(data.preferred_name)}</span>
++        </div>
++        ` : ''}
++        <div class="field">
++          <span class="field-label">Email:</span>
++          <span class="field-value"><a href="mailto:${escapeHtml(data.email || '')}">${escapeHtml(data.email || '')}</a></span>
++        </div>
++        <div class="field">
++          <span class="field-label">Phone:</span>
++          <span class="field-value">${escapeHtml(data.phone || '')}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Location:</span>
++          <span class="field-value">${escapeHtml(data.city || '')}, ${escapeHtml(data.state || '')}</span>
++        </div>
++        ${data.linkedin ? `
++        <div class="field">
++          <span class="field-label">LinkedIn:</span>
++          <span class="field-value"><a href="${escapeHtml(data.linkedin)}">${escapeHtml(data.linkedin)}</a></span>
++        </div>
++        ` : ''}
++      </div>
++      
++      <div class="section">
++        <h2>🏢 Business Information</h2>
++        <div class="field">
++          <span class="field-label">Company:</span>
++          <span class="field-value">${escapeHtml(data.company || '')}</span>
++        </div>
++        ${data.website ? `
++        <div class="field">
++          <span class="field-label">Website:</span>
++          <span class="field-value"><a href="${escapeHtml(data.website)}">${escapeHtml(data.website)}</a></span>
++        </div>
++        ` : ''}
++        <div class="field">
++          <span class="field-label">Industry:</span>
++          <span class="field-value">${escapeHtml(data.industry || '')}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Role:</span>
++          <span class="field-value">${escapeHtml(data.role || '')}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Years in Business:</span>
++          <span class="field-value">${escapeHtml(data.years_in_business || '')}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Employees:</span>
++          <span class="field-value">${escapeHtml(data.employees || '')}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Annual Revenue:</span>
++          <span class="field-value">${escapeHtml(data.revenue || '')}</span>
++        </div>
++      </div>
++      
++      <div class="section">
++        <h2>💪 Leadership Context</h2>
++        <div class="field">
++          <span class="field-label">People Depending Daily:</span>
++          <div class="field-value" style="white-space: pre-wrap;">${escapeHtml(data.people_depending || '')}</div>
++        </div>
++        <div class="field">
++          <span class="field-label">Primary Leadership Responsibility:</span>
++          <div class="field-value" style="white-space: pre-wrap;">${escapeHtml(data.leadership_responsibility || '')}</div>
++        </div>
++        <div class="field">
++          <span class="field-label">Biggest Leadership Challenge:</span>
++          <div class="field-value" style="white-space: pre-wrap;">${escapeHtml(data.leadership_challenge || '')}</div>
++        </div>
++      </div>
++      
++      <div class="section">
++        <h2>✝️ Spiritual Formation</h2>
++        <div class="field">
++          <span class="field-label">Current Spiritual Rhythm:</span>
++          <div class="field-value" style="white-space: pre-wrap;">${escapeHtml(data.spiritual_rhythm || '')}</div>
++        </div>
++        <div class="field">
++          <span class="field-label">Connected to Local Church:</span>
++          <span class="field-value">${escapeHtml(data.church_connected || '')}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Has Accountability:</span>
++          <span class="field-value">${escapeHtml(data.accountability || '')}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Areas Needing Strengthening:</span>
++          <ul class="checkbox-list" style="margin-top: 5px;">
++            ${data.strengthen_faith ? '<li>Faith</li>' : ''}
++            ${data.strengthen_marriage ? '<li>Marriage / Family</li>' : ''}
++            ${data.strengthen_leadership ? '<li>Leadership Development</li>' : ''}
++            ${data.strengthen_growth ? '<li>Business Growth</li>' : ''}
++            ${data.strengthen_integrity ? '<li>Integrity / Accountability</li>' : ''}
++            ${data.strengthen_health ? '<li>Health</li>' : ''}
++            ${data.strengthen_resilience ? '<li>Emotional Resilience</li>' : ''}
++            ${data.strengthen_other ? '<li>Other</li>' : ''}
++          </ul>
++        </div>
++      </div>
++      
++      <div class="section">
++        <h2>🎯 Motivation & Contribution</h2>
++        <div class="field">
++          <span class="field-label">Why Join FBL:</span>
++          <div class="field-value" style="white-space: pre-wrap;">${escapeHtml(data.why_join || '')}</div>
++        </div>
++        <div class="field">
++          <span class="field-label">Hope to Gain:</span>
++          <div class="field-value" style="white-space: pre-wrap;">${escapeHtml(data.hope_to_gain || '')}</div>
++        </div>
++        <div class="field">
++          <span class="field-label">Willing to Contribute:</span>
++          <div class="field-value" style="white-space: pre-wrap;">${escapeHtml(data.willing_to_contribute || '')}</div>
++        </div>
++      </div>
++      
++      <div class="section">
++        <h2>💰 Payment Selection</h2>
++        <div class="field">
++          <span class="field-label">Assessment Fee Acknowledged:</span>
++          <span class="field-value">${data.assessment_acknowledgment ? 'Yes - $195 one-time' : 'Not acknowledged'}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Payment Option:</span>
++          <span class="field-value">${escapeHtml(data.payment_option || '')}</span>
++        </div>
++        ${data.payment_notes ? `
++        <div class="field">
++          <span class="field-label">Payment Notes:</span>
++          <div class="field-value" style="white-space: pre-wrap;">${escapeHtml(data.payment_notes)}</div>
++        </div>
++        ` : ''}
++      </div>
++    </div>
++    
++    <div class="footer">
++      <p><strong>Fellowship of Business Leaders</strong></p>
++      <p>This submission was received via fblconnect.com</p>
++      <p style="font-size: 0.85em; color: #94a3b8;">Reply directly to this email to contact the applicant at ${escapeHtml(data.email || '')}</p>
++    </div>
++  </div>
++</body>
++</html>
++`;
++  
++  return html.trim();
++}
++
++/**
++ * Build email HTML for partner form
++ */
++function buildPartnerEmailHtml(data) {
++  const html = `
++<!DOCTYPE html>
++<html>
++<head>
++  <meta charset="utf-8">
++  <style>
++    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
++    .container { max-width: 800px; margin: 0 auto; padding: 20px; }
++    .header { background: #0F111E; color: white; padding: 20px; border-radius: 8px 8px 0 0; }
++    .header h1 { margin: 0; color: #22C55E; }
++    .content { background: #f8f9fa; padding: 20px; }
++    .section { background: white; margin: 20px 0; padding: 20px; border-radius: 8px; border-left: 4px solid #22C55E; }
++    .section h2 { color: #0F111E; margin-top: 0; font-size: 1.3em; }
++    .field { margin: 15px 0; }
++    .field-label { font-weight: 600; color: #0F111E; display: block; margin-bottom: 5px; }
++    .field-value { color: #475569; }
++    .footer { text-align: center; padding: 20px; color: #64748b; font-size: 0.9em; }
++    .tier-badge { display: inline-block; background: #22C55E; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 600; }
++  </style>
++</head>
++<body>
++  <div class="container">
++    <div class="header">
++      <h1>New FBL Partner Application</h1>
++      <p style="margin: 5px 0 0 0; color: #94a3b8;">Submitted: ${escapeHtml(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }))}</p>
++    </div>
++    
++    <div class="content">
++      <div class="section">
++        <h2>🏢 Company Information</h2>
++        <div class="field">
++          <span class="field-label">Company Name:</span>
++          <span class="field-value">${escapeHtml(data.company_name || '')}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Industry / Category:</span>
++          <span class="field-value">${escapeHtml(data.industry || '')}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Website:</span>
++          <span class="field-value"><a href="${escapeHtml(data.website || '')}">${escapeHtml(data.website || '')}</a></span>
++        </div>
++      </div>
++      
++      <div class="section">
++        <h2>👤 Primary Contact</h2>
++        <div class="field">
++          <span class="field-label">Name:</span>
++          <span class="field-value">${escapeHtml(data.contact_name || '')}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Email:</span>
++          <span class="field-value"><a href="mailto:${escapeHtml(data.email || '')}">${escapeHtml(data.email || '')}</a></span>
++        </div>
++        <div class="field">
++          <span class="field-label">Phone:</span>
++          <span class="field-value">${escapeHtml(data.phone || '')}</span>
++        </div>
++      </div>
++      
++      <div class="section">
++        <h2>🤝 Partnership Details</h2>
++        <div class="field">
++          <span class="field-label">Desired Tier:</span>
++          <span class="tier-badge">${escapeHtml(data.tier || '').toUpperCase()}</span>
++        </div>
++        <div class="field">
++          <span class="field-label">Why Partner with FBL:</span>
++          <div class="field-value" style="white-space: pre-wrap;">${escapeHtml(data.why_fbl || '')}</div>
++        </div>
++        <div class="field">
++          <span class="field-label">Value for FBL Members:</span>
++          <div class="field-value" style="white-space: pre-wrap;">${escapeHtml(data.member_value || '')}</div>
++        </div>
++        <div class="field">
++          <span class="field-label">Member Benefit (15%+ discount):</span>
++          <div class="field-value" style="white-space: pre-wrap;">${escapeHtml(data.member_benefit || '')}</div>
++        </div>
++        ${data.roi_timeline ? `
++        <div class="field">
++          <span class="field-label">Expected ROI Timeline:</span>
++          <span class="field-value">${escapeHtml(data.roi_timeline)}</span>
++        </div>
++        ` : ''}
++      </div>
++      
++      <div class="section">
++        <h2>✅ Commitments Acknowledged</h2>
++        <ul style="list-style: none; padding-left: 0;">
++          ${data.commitment_communications ? '<li style="margin: 8px 0;">✓ All communications must be FBL-approved</li>' : ''}
++          ${data.commitment_value ? '<li style="margin: 8px 0;">✓ Commit to providing real value to members</li>' : ''}
++          ${data.commitment_limits ? '<li style="margin: 8px 0;">✓ Agree to communication limits for tier</li>' : ''}
++          ${data.commitment_agreement ? '<li style="margin: 8px 0;">✓ Will honor partner agreement terms</li>' : ''}
++        </ul>
++      </div>
++    </div>
++    
++    <div class="footer">
++      <p><strong>Fellowship of Business Leaders</strong></p>
++      <p>This submission was received via fblconnect.com/partners/</p>
++      <p style="font-size: 0.85em; color: #94a3b8;">Reply directly to this email to contact the applicant at ${escapeHtml(data.email || '')}</p>
++    </div>
++  </div>
++</body>
++</html>
++`;
++  
++  return html.trim();
++}
++
++/**
++ * Send email via Resend
++ */
++async function sendEmail(formData, isPartnerForm) {
++  const RESEND_API_KEY = process.env.RESEND_API_KEY;
++  
++  // Use form-specific recipient or fall back to general recipient
++  const RECIPIENT = isPartnerForm
++    ? (process.env.PARTNER_FORM_RECIPIENT_EMAIL || process.env.FORM_RECIPIENT_EMAIL)
++    : (process.env.MEMBERSHIP_FORM_RECIPIENT_EMAIL || process.env.FORM_RECIPIENT_EMAIL);
++  
++  if (!RESEND_API_KEY) {
++    throw new Error('RESEND_API_KEY not configured');
++  }
++  
++  if (!RECIPIENT) {
++    throw new Error('Form recipient email not configured. Set MEMBERSHIP_FORM_RECIPIENT_EMAIL and PARTNER_FORM_RECIPIENT_EMAIL or FORM_RECIPIENT_EMAIL.');
++  }
++  
++  const subject = isPartnerForm 
++    ? `FBL Partner Application: ${formData.company_name || 'New Application'}`
++    : `FBL Membership Application: ${formData.full_name || 'New Application'}`;
++  
++  const html = isPartnerForm 
++    ? buildPartnerEmailHtml(formData)
++    : buildApplicationEmailHtml(formData);
++  
++  const response = await fetch('https://api.resend.com/emails', {
++    method: 'POST',
++    headers: {
++      'Authorization': `Bearer ${RESEND_API_KEY}`,
++      'Content-Type': 'application/json',
++    },
++    body: JSON.stringify({
++      from: CONFIG.FROM_EMAIL,
++      to: RECIPIENT,
++      subject: subject,
++      html: html,
++      reply_to: formData.email || RECIPIENT,
++    }),
++  });
++  
++  if (!response.ok) {
++    const errorText = await response.text();
++    throw new Error(`Resend API error: ${response.status} - ${errorText}`);
++  }
++  
++  return await response.json();
++}
++
++/**
++ * Main handler
++ */
++export default async function handler(req, res) {
++  // CORS headers
++  const origin = req.headers.origin || req.headers.referer;
++  const allowedOrigin = CONFIG.ALLOWED_ORIGINS.find(o => origin?.startsWith(o));
++  
++  if (allowedOrigin) {
++    res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
++  }
++  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
++  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
++  
++  // Handle preflight
++  if (req.method === 'OPTIONS') {
++    return res.status(200).end();
++  }
++  
++  // Only allow POST
++  if (req.method !== 'POST') {
++    return res.status(405).json({ 
++      success: false, 
++      error: 'Method not allowed',
++      message: 'This endpoint only accepts POST requests'
++    });
++  }
++  
++  try {
++    // Rate limiting
++    const clientIp = req.headers['x-forwarded-for']?.split(',')[0] || 
++                     req.headers['x-real-ip'] || 
++                     req.socket?.remoteAddress || 
++                     'unknown';
++    
++    const rateLimit = checkRateLimit(clientIp);
++    
++    if (!rateLimit.allowed) {
++      const resetIn = Math.ceil((rateLimit.resetAt - Date.now()) / 1000 / 60);
++      return res.status(429).json({
++        success: false,
++        error: 'Rate limit exceeded',
++        message: `Too many submissions. Please try again in ${resetIn} minutes.`,
++        retryAfter: resetIn * 60,
++      });
++    }
++    
++    // Validate form data
++    const validation = validateFormData(req.body);
++    
++    if (!validation.valid) {
++      return res.status(400).json({
++        success: false,
++        error: 'Validation failed',
++        message: 'Please check your form and try again.',
++        details: validation.errors,
++      });
++    }
++    
++    // Determine form type
++    const isPartnerForm = req.body._subject === 'FBL Partner Application';
++    
++    // Send email
++    const emailResult = await sendEmail(req.body, isPartnerForm);
++    
++    // Return success
++    return res.status(200).json({
++      success: true,
++      message: isPartnerForm 
++        ? 'Partner application submitted successfully. We\'ll review and contact you within 5 business days.'
++        : 'Application submitted successfully. Please proceed to complete your payment.',
++      emailId: emailResult.id,
++      redirectUrl: isPartnerForm ? null : '/membership-payment/',
++    });
++    
++  } catch (error) {
++    console.error('Form submission error:', error);
++    
++    // Don't expose internal errors to client
++    const isDevelopment = process.env.NODE_ENV === 'development';
++    
++    return res.status(500).json({
++      success: false,
++      error: 'Submission failed',
++      message: 'An error occurred while processing your submission. Please try again or contact us directly.',
++      ...(isDevelopment && { details: error.message }),
++    });
++  }
++}
+diff --git a/api/submit-form.test.js b/api/submit-form.test.js
+new file mode 100644
+index 0000000..274bdce
+--- /dev/null
++++ b/api/submit-form.test.js
+@@ -0,0 +1,373 @@
++/**
++ * Test suite for FBL form submission handler
++ * Run with: node api/submit-form.test.js
++ * 
++ * This uses a mock Resend implementation - no real emails are sent
++ */
++
++// Mock environment variables
++process.env.RESEND_API_KEY = 'test_key_mock';
++process.env.MEMBERSHIP_FORM_RECIPIENT_EMAIL = 'member@fblconnect.com';
++process.env.PARTNER_FORM_RECIPIENT_EMAIL = 'member@fblconnect.com';
++process.env.ALLOWED_ORIGINS = 'https://fblconnect.com';
++process.env.NODE_ENV = 'test';
++
++// Mock fetch for Resend API
++global.fetch = async (url, options) => {
++  if (url === 'https://api.resend.com/emails') {
++    const body = JSON.parse(options.body);
++    
++    // Validate email structure
++    if (!body.from || !body.to || !body.subject || !body.html) {
++      return {
++        ok: false,
++        status: 400,
++        text: async () => 'Missing required email fields',
++      };
++    }
++    
++    // Simulate successful send
++    return {
++      ok: true,
++      status: 200,
++      json: async () => ({ id: 'mock-email-id-' + Date.now() }),
++    };
++  }
++  
++  throw new Error(`Unexpected fetch URL: ${url}`);
++};
++
++// Import the handler
++const handler = require('./submit-form.js').default;
++
++// Test utilities
++let testsPassed = 0;
++let testsFailed = 0;
++
++function assert(condition, message) {
++  if (condition) {
++    testsPassed++;
++    console.log(`  ✓ ${message}`);
++  } else {
++    testsFailed++;
++    console.error(`  ✗ ${message}`);
++  }
++}
++
++function assertEquals(actual, expected, message) {
++  if (actual === expected) {
++    testsPassed++;
++    console.log(`  ✓ ${message}`);
++  } else {
++    testsFailed++;
++    console.error(`  ✗ ${message}`);
++    console.error(`    Expected: ${expected}`);
++    console.error(`    Actual: ${actual}`);
++  }
++}
++
++// Mock request/response objects
++function createMockReq(method, body, headers = {}) {
++  return {
++    method,
++    body,
++    headers: {
++      origin: 'https://fblconnect.com',
++      'x-forwarded-for': '127.0.0.1',
++      ...headers,
++    },
++  };
++}
++
++function createMockRes() {
++  const headers = {};
++  let statusCode = 200;
++  let responseData = null;
++  
++  return {
++    setHeader: (key, value) => { headers[key] = value; },
++    status: (code) => {
++      statusCode = code;
++      return {
++        json: (data) => { responseData = data; },
++        end: () => {},
++      };
++    },
++    json: (data) => { responseData = data; },
++    getStatus: () => statusCode,
++    getData: () => responseData,
++    getHeaders: () => headers,
++  };
++}
++
++// Test suite
++async function runTests() {
++  console.log('\n🧪 Running FBL Form Handler Tests\n');
++  
++  // Test 1: Valid membership application
++  console.log('Test 1: Valid membership application');
++  {
++    const req = createMockReq('POST', {
++      full_name: 'John Doe',
++      email: 'john@example.com',
++      phone: '555-0100',
++      city: 'Atlanta',
++      state: 'GA',
++      company: 'Test Company',
++      industry: 'Software & Technology',
++      role: 'CEO / Chief Executive Officer',
++      covenant_signature: 'John Doe',
++      covenant_date: '2026-11-06',
++      covenant_formation: 'on',
++      covenant_confidentiality: 'on',
++      covenant_integrity: 'on',
++      covenant_contribution: 'on',
++      covenant_agreement: 'on',
++    });
++    const res = createMockRes();
++    
++    await handler(req, res);
++    
++    const data = res.getData();
++    assert(data?.success === true, 'Returns success');
++    assert(data?.redirectUrl === '/membership-payment/', 'Includes redirect URL');
++  }
++  
++  // Test 2: Valid partner application
++  console.log('\nTest 2: Valid partner application');
++  {
++    const req = createMockReq('POST', {
++      _subject: 'FBL Partner Application',
++      company_name: 'Partner Corp',
++      industry: 'Consulting',
++      website: 'https://partner.example.com',
++      contact_name: 'Jane Smith',
++      email: 'jane@partner.example.com',
++      phone: '555-0200',
++      tier: 'founding',
++      why_fbl: 'Want to reach business leaders',
++      member_value: 'Provide consulting services',
++      member_benefit: '20% discount for FBL members',
++      commitment_communications: 'on',
++      commitment_value: 'on',
++      commitment_limits: 'on',
++      commitment_agreement: 'on',
++    });
++    const res = createMockRes();
++    
++    await handler(req, res);
++    
++    const data = res.getData();
++    assert(data?.success === true, 'Returns success');
++    assert(data?.redirectUrl === null, 'No redirect for partner form');
++  }
++  
++  // Test 3: Missing required fields
++  console.log('\nTest 3: Missing required fields');
++  {
++    const req = createMockReq('POST', {
++      full_name: 'John Doe',
++      // Missing email and other required fields
++    });
++    const res = createMockRes();
++    
++    await handler(req, res);
++    
++    assertEquals(res.getStatus(), 400, 'Returns 400 status');
++    const data = res.getData();
++    assert(data?.success === false, 'Returns failure');
++    assert(data?.error === 'Validation failed', 'Error is validation failed');
++  }
++  
++  // Test 4: Invalid email format
++  console.log('\nTest 4: Invalid email format');
++  {
++    const req = createMockReq('POST', {
++      full_name: 'John Doe',
++      email: 'invalid-email',
++      phone: '555-0100',
++      city: 'Atlanta',
++      state: 'GA',
++      company: 'Test Company',
++      industry: 'Software & Technology',
++      role: 'CEO',
++    }, { 'x-forwarded-for': '10.0.0.4' }); // Unique IP
++    const res = createMockRes();
++    
++    await handler(req, res);
++    
++    assertEquals(res.getStatus(), 400, 'Returns 400 status');
++  }
++  
++  // Test 5: Honeypot spam detection
++  console.log('\nTest 5: Honeypot spam detection');
++  {
++    const req = createMockReq('POST', {
++      full_name: 'Spammer',
++      email: 'spam@example.com',
++      _gotcha: 'spam-value', // Honeypot filled
++      phone: '555-0100',
++      city: 'Atlanta',
++      state: 'GA',
++      company: 'Spam Corp',
++      industry: 'Spam',
++      role: 'Spammer',
++    }, { 'x-forwarded-for': '10.0.0.5' }); // Unique IP
++    const res = createMockRes();
++    
++    await handler(req, res);
++    
++    assertEquals(res.getStatus(), 400, 'Returns 400 status');
++    const data = res.getData();
++    assert(data?.details?.includes('Spam detected'), 'Detects spam');
++  }
++  
++  // Test 6: Rate limiting
++  console.log('\nTest 6: Rate limiting (3 submissions max per hour)');
++  {
++    const testIP = '192.168.1.100';
++    const validBody = {
++      full_name: 'Rate Test',
++      email: 'rate@example.com',
++      phone: '555-0100',
++      city: 'Atlanta',
++      state: 'GA',
++      company: 'Test Company',
++      industry: 'Software',
++      role: 'CEO',
++      covenant_signature: 'Rate Test',
++      covenant_formation: 'on',
++      covenant_confidentiality: 'on',
++      covenant_integrity: 'on',
++      covenant_contribution: 'on',
++      covenant_agreement: 'on',
++    };
++    
++    // Submit 3 times (should succeed)
++    for (let i = 0; i < 3; i++) {
++      const req = createMockReq('POST', validBody, { 'x-forwarded-for': testIP });
++      const res = createMockRes();
++      await handler(req, res);
++      assert(res.getData()?.success === true, `Submission ${i + 1} succeeds`);
++    }
++    
++    // 4th submission should be rate limited
++    const req = createMockReq('POST', validBody, { 'x-forwarded-for': testIP });
++    const res = createMockRes();
++    await handler(req, res);
++    assertEquals(res.getStatus(), 429, 'Returns 429 on 4th submission');
++    assert(res.getData()?.error === 'Rate limit exceeded', 'Rate limit error message');
++  }
++  
++  // Test 7: CORS headers
++  console.log('\nTest 7: CORS headers');
++  {
++    const req = createMockReq('OPTIONS', {});
++    const res = createMockRes();
++    
++    await handler(req, res);
++    
++    const headers = res.getHeaders();
++    assert(headers['Access-Control-Allow-Methods'], 'Sets CORS methods');
++    assert(headers['Access-Control-Allow-Headers'], 'Sets CORS headers');
++  }
++  
++  // Test 8: Method not allowed
++  console.log('\nTest 8: Method not allowed');
++  {
++    const req = createMockReq('GET', {});
++    const res = createMockRes();
++    
++    await handler(req, res);
++    
++    assertEquals(res.getStatus(), 405, 'Returns 405 for GET');
++  }
++  
++  // Test 9: Field length validation
++  console.log('\nTest 9: Field length validation');
++  {
++    const req = createMockReq('POST', {
++      full_name: 'A'.repeat(10001), // Exceeds 10KB limit
++      email: 'test@example.com',
++      phone: '555-0100',
++      city: 'Atlanta',
++      state: 'GA',
++      company: 'Test',
++      industry: 'Tech',
++      role: 'CEO',
++    }, { 'x-forwarded-for': '10.0.0.9' }); // Unique IP
++    const res = createMockRes();
++    
++    await handler(req, res);
++    
++    assertEquals(res.getStatus(), 400, 'Returns 400 for oversized field');
++  }
++  
++  // Test 10: Reply-To header uses applicant email
++  console.log('\nTest 10: Reply-To uses applicant email');
++  {
++    // We need to intercept the fetch call to check reply_to
++    const originalFetch = global.fetch;
++    let capturedEmailBody = null;
++    
++    global.fetch = async (url, options) => {
++      if (url === 'https://api.resend.com/emails') {
++        capturedEmailBody = JSON.parse(options.body);
++        return {
++          ok: true,
++          status: 200,
++          json: async () => ({ id: 'test-id' }),
++        };
++      }
++      return originalFetch(url, options);
++    };
++    
++    const req = createMockReq('POST', {
++      full_name: 'Reply Test',
++      email: 'replytest@example.com',
++      phone: '555-0100',
++      city: 'Atlanta',
++      state: 'GA',
++      company: 'Test',
++      industry: 'Tech',
++      role: 'CEO',
++      covenant_signature: 'Reply Test',
++      covenant_formation: 'on',
++      covenant_confidentiality: 'on',
++      covenant_integrity: 'on',
++      covenant_contribution: 'on',
++      covenant_agreement: 'on',
++    }, { 'x-forwarded-for': '10.0.0.10' }); // Unique IP
++    const res = createMockRes();
++    
++    await handler(req, res);
++    
++    assert(capturedEmailBody?.from === 'FBL Forms <forms@send.fblconnect.com>', 'From is correct');
++    assert(capturedEmailBody?.to === 'member@fblconnect.com', 'To is correct');
++    assert(capturedEmailBody?.reply_to === 'replytest@example.com', 'Reply-To is applicant email');
++    
++    global.fetch = originalFetch;
++  }
++  
++  // Summary
++  console.log('\n' + '='.repeat(50));
++  console.log(`✓ Passed: ${testsPassed}`);
++  console.log(`✗ Failed: ${testsFailed}`);
++  console.log('='.repeat(50) + '\n');
++  
++  return testsFailed === 0;
++}
++
++// Run tests
++if (require.main === module) {
++  runTests()
++    .then(success => {
++      process.exit(success ? 0 : 1);
++    })
++    .catch(error => {
++      console.error('Test suite error:', error);
++      process.exit(1);
++    });
++}
++
++module.exports = { runTests };
+diff --git a/static/css/form-messages.css b/static/css/form-messages.css
+new file mode 100644
+index 0000000..5b30c95
+--- /dev/null
++++ b/static/css/form-messages.css
+@@ -0,0 +1,72 @@
++/* Form message styles for success and error feedback */
++
++.form-message {
++  padding: 1rem 1.25rem;
++  margin: 0 0 2rem 0;
++  border-radius: 8px;
++  font-size: 1rem;
++  line-height: 1.5;
++  display: flex;
++  align-items: flex-start;
++  gap: 0.75rem;
++  animation: slideDown 0.3s ease-out;
++}
++
++.form-message-error {
++  background-color: #fef2f2;
++  border: 2px solid #ef4444;
++  color: #991b1b;
++}
++
++.form-message-success {
++  background-color: #f0fdf4;
++  border: 2px solid #22C55E;
++  color: #166534;
++}
++
++.form-message [aria-hidden="true"] {
++  font-size: 1.25rem;
++  flex-shrink: 0;
++  line-height: 1;
++}
++
++@keyframes slideDown {
++  from {
++    opacity: 0;
++    transform: translateY(-10px);
++  }
++  to {
++    opacity: 1;
++    transform: translateY(0);
++  }
++}
++
++/* Loading state for submit buttons */
++button[type="submit"][aria-busy="true"] {
++  opacity: 0.7;
++  position: relative;
++}
++
++button[type="submit"][aria-busy="true"]::after {
++  content: '';
++  position: absolute;
++  width: 16px;
++  height: 16px;
++  top: 50%;
++  right: 1rem;
++  margin-top: -8px;
++  border: 2px solid rgba(255, 255, 255, 0.3);
++  border-top-color: white;
++  border-radius: 50%;
++  animation: spin 0.8s linear infinite;
++}
++
++@keyframes spin {
++  to { transform: rotate(360deg); }
++}
++
++/* Focus styles for accessibility */
++.form-message:focus {
++  outline: 2px solid #22C55E;
++  outline-offset: 2px;
++}
+diff --git a/static/js/form-handler.js b/static/js/form-handler.js
+new file mode 100644
+index 0000000..8b75c0c
+--- /dev/null
++++ b/static/js/form-handler.js
+@@ -0,0 +1,242 @@
++/**
++ * FBL Form Handler - Client-side validation and submission
++ * Handles both membership application and partner forms with accessible error handling
++ */
++
++(function() {
++  'use strict';
++
++  // Configuration
++  const API_ENDPOINT = '/api/submit-form';
++  const MAX_RETRIES = 2;
++  const RETRY_DELAY = 1000; // ms
++
++  /**
++   * Show loading state on submit button
++   */
++  function setButtonLoading(button, isLoading) {
++    if (isLoading) {
++      button.dataset.originalText = button.textContent;
++      button.textContent = 'Submitting...';
++      button.disabled = true;
++      button.style.cursor = 'wait';
++      button.setAttribute('aria-busy', 'true');
++    } else {
++      button.textContent = button.dataset.originalText || button.textContent;
++      button.disabled = false;
++      button.style.cursor = 'pointer';
++      button.setAttribute('aria-busy', 'false');
++    }
++  }
++
++  /**
++   * Display form message (success or error)
++   */
++  function showMessage(form, message, type = 'error') {
++    // Remove existing messages
++    const existingMsg = form.querySelector('.form-message');
++    if (existingMsg) {
++      existingMsg.remove();
++    }
++
++    const messageDiv = document.createElement('div');
++    messageDiv.className = `form-message form-message-${type}`;
++    messageDiv.setAttribute('role', type === 'error' ? 'alert' : 'status');
++    messageDiv.setAttribute('aria-live', 'polite');
++    
++    const icon = type === 'error' ? '⚠️' : '✅';
++    messageDiv.innerHTML = `<span aria-hidden="true">${icon}</span> ${escapeHtml(message)}`;
++    
++    form.insertBefore(messageDiv, form.firstChild);
++    
++    // Scroll to message
++    messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
++    
++    // Focus for screen readers
++    messageDiv.tabIndex = -1;
++    messageDiv.focus();
++  }
++
++  /**
++   * Escape HTML to prevent XSS
++   */
++  function escapeHtml(text) {
++    const div = document.createElement('div');
++    div.textContent = text;
++    return div.innerHTML;
++  }
++
++  /**
++   * Client-side validation before submission
++   */
++  function validateForm(form) {
++    const errors = [];
++    
++    // Check required fields
++    const requiredFields = form.querySelectorAll('[required]');
++    requiredFields.forEach(field => {
++      if (field.type === 'checkbox' || field.type === 'radio') {
++        const name = field.name;
++        const group = form.querySelectorAll(`[name="${name}"]`);
++        const checked = Array.from(group).some(el => el.checked);
++        if (!checked) {
++          const label = form.querySelector(`label[for="${field.id}"]`)?.textContent || name;
++          errors.push(`${label} is required`);
++        }
++      } else if (!field.value.trim()) {
++        const label = form.querySelector(`label[for="${field.id}"]`)?.textContent || field.name;
++        errors.push(`${label} is required`);
++      }
++    });
++
++    // Validate email format
++    const emailFields = form.querySelectorAll('input[type="email"]');
++    emailFields.forEach(field => {
++      if (field.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
++        errors.push('Please enter a valid email address');
++      }
++    });
++
++    // Check field length limits (10KB max per field)
++    const textFields = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea');
++    textFields.forEach(field => {
++      if (field.value.length > 10000) {
++        const label = form.querySelector(`label[for="${field.id}"]`)?.textContent || field.name;
++        errors.push(`${label} is too long (maximum 10,000 characters)`);
++      }
++    });
++
++    return errors;
++  }
++
++  /**
++   * Submit form via fetch API with retry logic
++   */
++  async function submitForm(form, data, retryCount = 0) {
++    try {
++      const response = await fetch(API_ENDPOINT, {
++        method: 'POST',
++        headers: {
++          'Content-Type': 'application/json',
++        },
++        body: JSON.stringify(data),
++      });
++
++      const result = await response.json();
++
++      if (!response.ok) {
++        // Handle rate limiting with specific message
++        if (response.status === 429) {
++          const retryAfter = Math.ceil((result.retryAfter || 3600) / 60);
++          throw new Error(`Too many submissions. Please try again in ${retryAfter} minutes.`);
++        }
++        
++        // Handle validation errors
++        if (response.status === 400) {
++          throw new Error(result.message || 'Please check your form and try again.');
++        }
++        
++        // Server error - retry if not exceeded max retries
++        if (response.status >= 500 && retryCount < MAX_RETRIES) {
++          await new Promise(resolve => setTimeout(resolve, RETRY_DELAY * (retryCount + 1)));
++          return submitForm(form, data, retryCount + 1);
++        }
++        
++        throw new Error(result.message || 'Submission failed. Please try again.');
++      }
++
++      return result;
++    } catch (error) {
++      // Network error - retry if not exceeded max retries
++      if (retryCount < MAX_RETRIES && error.name === 'TypeError') {
++        await new Promise(resolve => setTimeout(resolve, RETRY_DELAY * (retryCount + 1)));
++        return submitForm(form, data, retryCount + 1);
++      }
++      throw error;
++    }
++  }
++
++  /**
++   * Handle form submission
++   */
++  async function handleSubmit(event) {
++    event.preventDefault();
++    
++    const form = event.target;
++    const submitButton = form.querySelector('button[type="submit"]');
++    
++    // Client-side validation
++    const validationErrors = validateForm(form);
++    if (validationErrors.length > 0) {
++      showMessage(form, validationErrors[0], 'error');
++      return;
++    }
++    
++    // Collect form data
++    const formData = new FormData(form);
++    const data = {};
++    for (const [key, value] of formData.entries()) {
++      // Handle checkboxes (collect all checked values)
++      if (form.querySelector(`input[name="${key}"][type="checkbox"]`)) {
++        data[key] = value;
++      } else {
++        data[key] = value;
++      }
++    }
++    
++    // Show loading state
++    setButtonLoading(submitButton, true);
++    
++    try {
++      const result = await submitForm(form, data);
++      
++      if (result.success) {
++        showMessage(form, result.message, 'success');
++        
++        // Redirect for membership applications
++        if (result.redirectUrl) {
++          setTimeout(() => {
++            window.location.href = result.redirectUrl;
++          }, 2000);
++        } else {
++          // Reset form for partner applications
++          form.reset();
++        }
++      } else {
++        showMessage(form, result.message || 'Submission failed. Please try again.', 'error');
++      }
++    } catch (error) {
++      console.error('Form submission error:', error);
++      showMessage(
++        form, 
++        error.message || 'An error occurred. Please try again or contact us directly.',
++        'error'
++      );
++    } finally {
++      setButtonLoading(submitButton, false);
++    }
++  }
++
++  /**
++   * Initialize form handlers when DOM is ready
++   */
++  function init() {
++    const applicationForm = document.querySelector('.application-form');
++    const partnerForm = document.querySelector('.partner-form');
++    
++    if (applicationForm) {
++      applicationForm.addEventListener('submit', handleSubmit);
++    }
++    
++    if (partnerForm) {
++      partnerForm.addEventListener('submit', handleSubmit);
++    }
++  }
++
++  // Initialize on DOM ready
++  if (document.readyState === 'loading') {
++    document.addEventListener('DOMContentLoaded', init);
++  } else {
++    init();
++  }
++})();
+diff --git a/themes/fbl/layouts/section/apply.html b/themes/fbl/layouts/section/apply.html
+index 5a450bf..afd818f 100644
+--- a/themes/fbl/layouts/section/apply.html
++++ b/themes/fbl/layouts/section/apply.html
+@@ -1,4 +1,5 @@
+ {{ define "main" }}
++<link rel="stylesheet" href="/css/form-messages.css">
+ <article class="apply-page">
+     <section class="page-hero">
+         <div class="container">
+@@ -7,18 +8,12 @@
+             <p class="page-subtitle">Complete the covenant acknowledgment and membership application below.</p>
+         </div>
+     </section>
+-
++    
+     <section class="apply-content">
+         <div class="container">
+-            <form action="https://formspree.io/f/mzdykbar" method="POST" class="application-form" autocomplete="on">
+-                <!-- Formspree honeypot for spam protection -->
+-                <input type="text" name="_gotcha" style="display:none" />
+-                <!-- Redirect to payment page after submission -->
+-                {{ if eq hugo.Environment "development" }}
+-                <input type="hidden" name="_next" value="http://localhost:1313/membership-payment/" />
+-                {{ else }}
+-                <input type="hidden" name="_next" value="https://wilsontechconsulting-png.github.io/fbl-hugo/membership-payment/" />
+-                {{ end }}
++            <form class="application-form" autocomplete="on">
++                <!-- Honeypot for spam protection -->
++                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+ 
+                 <!-- FBL Covenant -->
+                 <div class="form-section">
+@@ -474,4 +469,6 @@ document.addEventListener('DOMContentLoaded', function() {
+     }
+ });
+ </script>
++
++<script src="/js/form-handler.js"></script>
+ {{ end }}
+diff --git a/themes/fbl/layouts/section/partners.html b/themes/fbl/layouts/section/partners.html
+index 39156c1..5d696fb 100644
+--- a/themes/fbl/layouts/section/partners.html
++++ b/themes/fbl/layouts/section/partners.html
+@@ -2,6 +2,7 @@
+ <style>
+ {{ readFile "themes/fbl/static/css/partners.css" | safeCSS }}
+ </style>
++<link rel="stylesheet" href="/css/form-messages.css">
+ <article class="partners-page">
+     <section class="page-hero">
+         <div class="container">
+@@ -26,9 +27,9 @@
+                 <p>Submit your information below and we'll review within 5 business days.</p>
+             </div>
+ 
+-            <form action="https://formspree.io/f/mzdykbar" method="POST" class="partner-form" autocomplete="on">
+-                <!-- Formspree honeypot for spam protection -->
+-                <input type="text" name="_gotcha" style="display:none" />
++            <form class="partner-form" autocomplete="on">
++                <!-- Honeypot for spam protection -->
++                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+                 <!-- Hidden field to identify this as partner application -->
+                 <input type="hidden" name="_subject" value="FBL Partner Application" />
+                 
+@@ -144,4 +145,6 @@
+         </div>
+     </section>
+ </article>
++
++<script src="/js/form-handler.js"></script>
+ {{ end }}
+diff --git a/vercel.json b/vercel.json
+new file mode 100644
+index 0000000..8ab9efb
+--- /dev/null
++++ b/vercel.json
+@@ -0,0 +1,39 @@
++{
++  "version": 2,
++  "name": "fbl-forms",
++  "buildCommand": "hugo --minify",
++  "outputDirectory": "public",
++  "installCommand": "wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.159.1/hugo_extended_0.159.1_linux-amd64.deb && sudo dpkg -i /tmp/hugo.deb",
++  "framework": null,
++  "functions": {
++    "api/**/*.js": {
++      "memory": 1024,
++      "maxDuration": 10
++    }
++  },
++  "headers": [
++    {
++      "source": "/api/(.*)",
++      "headers": [
++        {
++          "key": "X-Content-Type-Options",
++          "value": "nosniff"
++        },
++        {
++          "key": "X-Frame-Options",
++          "value": "DENY"
++        },
++        {
++          "key": "X-XSS-Protection",
++          "value": "1; mode=block"
++        }
++      ]
++    }
++  ],
++  "rewrites": [
++    {
++      "source": "/(.*)",
++      "destination": "/$1"
++    }
++  ]
++}

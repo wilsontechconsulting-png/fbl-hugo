@@ -27,7 +27,7 @@
                 <p>Submit your information below and we'll review within 5 business days.</p>
             </div>
 
-            <form class="partner-form" autocomplete="on">
+            <form class="partner-form" autocomplete="on" data-api-endpoint="{{ .Site.Params.formApiEndpoint }}">
                 <!-- Honeypot for spam protection -->
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
                 <!-- Hidden field to identify this as partner application -->

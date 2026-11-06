@@ -11,7 +11,7 @@
     
     <section class="apply-content">
         <div class="container">
-            <form class="application-form" autocomplete="on">
+            <form class="application-form" autocomplete="on" data-api-endpoint="{{ .Site.Params.formApiEndpoint }}">
                 <!-- Honeypot for spam protection -->
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 

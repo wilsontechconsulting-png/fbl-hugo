@@ -6,8 +6,8 @@
 (function() {
   'use strict';
 
-  // Configuration
-  const API_ENDPOINT = '/api/submit-form';
+  // Configuration - Vercel API endpoint must be configured
+  // Get from data attribute on form or fail safely
   const MAX_RETRIES = 2;
   const RETRY_DELAY = 1000; // ms
 
@@ -113,8 +113,15 @@
    * Submit form via fetch API with retry logic
    */
   async function submitForm(form, data, retryCount = 0) {
+    // Get API endpoint from form data attribute
+    const apiEndpoint = form.dataset.apiEndpoint;
+    
+    if (!apiEndpoint) {
+      throw new Error('Form submission endpoint not configured. Please contact site administrator.');
+    }
+    
     try {
-      const response = await fetch(API_ENDPOINT, {
+      const response = await fetch(apiEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
